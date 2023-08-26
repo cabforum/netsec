@@ -84,7 +84,7 @@ As a document which outlines requirements some CAs must meet, it can help to und
    
 **Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/vuln-metrics/cvss>).
 
-**Critical Security Event**: An event, set of circumstances, or anomalous activity that could lead to a circumvention of a CA System's security controls or compromise of a CA System’s integrity or operational continuity, including, but not limited to, excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or physical compromise of component integrity.
+**Critical Security Event**: An event, set of circumstances, or anomalous activity that could lead to a circumvention of CA Infrastructure security controls or compromise of CA Infrastructure integrity or operational continuity, including, but not limited to, excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or physical compromise of component integrity.
 
 **Critical Vulnerability**: A system vulnerability that has a CVSS v2.0 score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see <https://nvd.nist.gov/vuln-metrics/cvss>), or as otherwise designated as a Critical Vulnerability by the CA or the CA/Browser Forum.
 
@@ -132,6 +132,8 @@ Authentication based on the possession of a certificate can be used as part of M
 
 **Public Key**: The cryptographic key of an asymmetric Key Pair that can be made public without compromising the security of the Key Pair. It may be used to verify digital signatures and/or to encrypt data that can be decrypted by the corresponding Private Key.
 
+**Requirements**: The Network and Certificate System Security Requirements found in this document.
+
 **Risk Assessment**: A formal process that:
 1. Identifies and documents foreseeable internal and external threats to the CA Infrastucture that could result in:
    + unauthorized access to the CA Infrastructure;
@@ -157,6 +159,7 @@ Authentication based on the possession of a certificate can be used as part of M
 
 **SANS Top 25**: A list created with input from the SysAdmin, Audit, Network, and Security (SANS) Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see <http://www.sans.org/top25-software-errors/>).
 
+<!-- Added FIPS 140-3 -->
 **Secure Key Storage Device**: A device certified as meeting at least:
    * FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
    * Common Criteria (EAL 4+).
@@ -197,20 +200,24 @@ Authentication based on the possession of a certificate can be used as part of M
    1. connected to the same network as CA Infrastructure and/or Network Equipment; and
    2. capable of accessing CA Infrastructure and/or Network Equipment.
 
+# Requirements
 ## 1. CA Infrastructure and Network Equipment Configuration
 
 ### 1.1 Network Segmentation
 
+#### 1.1.1
 CA Infrastructure MUST be segmented into separate networks based on the functional and/or logical relationships of CA Infrastructure components.
 
+##### 1.1.1.1
 Network segmentation MUST be designed and implemented using appropriate and applicable Network Equipment, such as:
-   a. firewalls
-   b. network access controls
-   c. virtual LANs (VLANs) and VLAN access control lists
-   d. physically separate networks
-   e. software-defined networking
-   f. virtual private networks (VPNs)
+   * firewalls
+   * network access controls
+   * virtual LANs (VLANs) and VLAN access control lists
+   * physically separate networks
+   * software-defined networking
+   * virtual private networks (VPNs)
 
+###### 1.1.1.2
 Network segmentation MUST be designed and implemented in a manner that:
    1. minimizes attack surfaces;
    2. limits lateral movement within networks;
@@ -263,7 +270,7 @@ The CA MUST ensure network segmentation systems or technologies are configured s
 ### 1.3 Change Management
 
 <!--
-Rewriting and combining with 1.2.2
+Rewriting and combining with 1.2.2; should ensure alignment with WTCA and ETSI
 
 Ensure that the CA’s security policies are encompassed within a change management process, which MUST minimally include:
    1. comprehensive documentation; and
@@ -274,7 +281,10 @@ Ensure that all changes to CA Infrastructure follow the change management proces
 
 The CA MUST establish and maintain a change management process which is minimally:
    1. documented comprehensively;
-   1. authoritative for all personnel in Trusted Roles, Network Equipment, and the CA Infrastructure;   
+   1. authoritative for:
+      1. all personnel in Trusted Roles;
+      2. management of Network Equipment; and
+      3. management of CA Infrastructure;   
    1. reviewed annually; 
    1. updated as needed; and
    1. approved:
@@ -291,22 +301,35 @@ The CA MUST ensure the change management process:
    2. addresses managing exceptions and responding to emergencies; and
    3. incorporates procedures for change reversal where applicable.
 
-The CA MUST ensure that all changes to Trusted Role definitions, Trusted Role appointments, CA Infrastructure, and Network Equipment are completed in accordance with this change management process.
+The CA MUST ensure that all changes are completed in accordance with this change management process for:
+   1. Trusted Role definitions;
+   2. Trusted Role appointments;
+   3. CA Infrastructure; and
+   4. Network Equipment.
 
 ## 2. Access Control
 
 ### 2.1 Trusted roles
 
-The CA MUST define Trusted Roles necessary, as applicable, to design, build, implement, operate, and maintain its CA Infrastructure and Network Equipment.
+The CA MUST define Trusted Roles necessary — as applicable — to design, build, implement, operate, and maintain its CA Infrastructure and Network Equipment.
 
-Each Trusted Role MUST have its responsibilities, privileges, and access documented. Such documentation MUST be kept up-to-date.
+Each Trusted Role MUST have its responsibilities, privileges, and access documented. Such documentation MUST be kept up-to-date. <!-- how up to date? -->
 
 Each Trusted Role MUST be assigned responsibilities, privileges, and access in a manner consistent with:
-   1. the Principle of Least Privilege;
-   2. requirements of Multi-Party Control; and 
+   1. the Principle of Least Privilege; and
+   2. requirements of Multi-Party Control.
+   <!-- Removing:
+   ; and 
    3. accountability.
+   What does accountability mean here? -->
 
-#### 2.1.2
+#### 2.1.1
+<!--
+Slight rewrite and moving up to Trusted roles under 2.1, but also this seems very difficult to actually implement and audit...
+
+### 2.1.4 -> 2.1.1
+Implement processes such that an individual only acts within the scope of their Trusted Role;
+-->
 The CA MUST ensure personnel act only within the scope of their Trusted Role(s).
 
 <!-- Should no longer be required separately from 1.3
@@ -319,42 +342,84 @@ Follow a documented procedure for managing authorized individuals appointed to T
 
 ### 2.2 Access Management
 <!--
-Combining, reordering, and rewriting
+Combining, reordering, and rewriting. Also bringing up some of the requirements from further down that are directly related to managing access to CA Infrastructure and Network Equipment.
 
-#### 2.1.2.1
-When an individual's authorization to access a CA System is changed or revoked (for example, by removing a Trusted Role, modifying an individual's Trusted Role, or modifying the defined access associated with a Trusted Role) authentication keys and passwords MUST also be changed or revoked;
-
-### 2.1.3 
+### 2.1.3 -> 2.2.1
 Ensure that only personnel assigned to Trusted Roles have access to CA Infrastructure;
 
-### 2.1.5 
+### 2.1.5  -> 2.2.1
 Require employees and contractors to observe the Principle of Least Privilege when accessing, or when configuring access privileges on, CA Infrastructure;
 
-### 2.1.6 
+### 2.3.1  -> 2.2.1
+Ensure that System access and System account permissions are restricted:
+   1. to persons assigned a Trusted Role associated with such access and permissions; and
+   2. in accordance with the Principle of Least Privilege;
+
+### 2.1.6 -> 2.2.1.1
 Require that each individual in a Trusted Role use a unique credential created by or assigned to that person in order to authenticate to CA Infrastructure;
 
-#### 2.1.6.1 
+#### 2.1.6.1 -> 2.2.1.2
 Group accounts and shared role credentials SHALL NOT be used;
+
+#### 2.1.2.1 -> 2.2.1.3
+When an individual's authorization to access a CA System is changed or revoked (for example, by removing a Trusted Role, modifying an individual's Trusted Role, or modifying the defined access associated with a Trusted Role) authentication keys and passwords MUST also be changed or revoked;
+
+### 2.3.4 -> 2.2.1.3
+Implement a process that disables all access by an individual to CA Infrastructure within twenty-four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
+
+### 2.3.2 -> 2.2.1.4
+Review all System accounts at least every three (3) months and deactivate any accounts that are no longer necessary for operations;
+
+### 2.3.3 -> 2.2.1.5
+Lockout account access to CA Infrastructure after no more than five (5) failed access attempts, provided that this security measure:
+   1. Is supported by the System;
+   2. Cannot be leveraged for a denial of service attack; and
+   3. Does not weaken the security of this authentication control;
 -->
 #### 2.2.1
-The CA MUST ensure access to CA Infrastructure and/or Network Equipment is limited to personnel assigned to applicable Trusted Roles and based on the Principle of Least Privilege.
-
+The CA MUST ensure access to CA Infrastructure and/or Network Equipment is:
+   1. limited to personnel assigned to applicable Trusted Roles; and
+   2. based on the Principle of Least Privilege.
 ##### 2.2.1.1
 The CA MUST ensure personnel assigned to Trusted Roles authorized to access or authenticate to CA Infrastructure and/or Network Equipment use unique authentication credentials created by or assigned to the authorized individual.
-
 ##### 2.2.1.2
-The CA MUST NOT allow group accounts or shared role credentials to access or authenticate to CA Infrastructure and/or Network Equipment. 
-
+The CA MUST NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. 
 ##### 2.2.1.3
 The CA MUST ensure authentication credentials are changed or revoked when associated authorizations are changed or revoked.
 
-<!--
-Slight rewrite and moving up to Trusted roles under 2.1, but also this seems very difficult to actually implement and audit...
-### 2.1.4
-
-Implement processes such that an individual only acts within the scope of their Trusted Role;
+The CA MUST ensure all access to CA Infrastructure and Network Equipment is disabled for personnel within twenty-four (24) hours of the termination of an individual's employment or contracting relationship.
+<!--QUESTIONS:
+1. Combine these last two? There could then be a timeline for when authentication credentials need to be changed or revoked generally that's the same or different from "when associated authorizations are changed or revoked due to the termination of an individual's employment or contracting relationship"
 -->
+##### 2.2.1.4
+<!--Maybe expand on what the review is for? e.g.
+This review MUST:
+   1. ensure each account's necessity to the CA Infrastructure;
+   2. ensure each account meets these Requirements;
+   3. deactivate or remove any account which is not necessary; and
+   4. update, deactivate, remove, or otherwise remediate any account which does not meet these Requirements.-->
+The CA MUST ensure any account capable of authenticating to or accessing CA Infrastructure or Network Equipment is reviewed at a minimumum of every three (3) months.
+<!-- Should Network Equipment be included here? -->
+The CA MUST ensure any account that is not necessary for the operation of CA Infrastructure or Network Equipment is deactivated or removed such that the account is no longer capable of authenticating to or accessing CA Infrastructure nor Network Equipment.
 
+##### 2.2.1.5
+<!-- This whole requirement seems so neutered by the provisions allowing CAs to not enforce it that I'm not sure it's very useful or provides meaningful value to the NSRs. For example, I would posit that _by definition_ *any and every* automatic lockout function *can* be used to cause a denial of service, using the Oxford definition (since we don't have one) of "an interruption in an authorized user's access to a computer network"
+Beyond that, there's no specification of how long the lockout is for or when the failed attempts need to occur (since it doesn't say it's temporary, is this being interpreted as requiring CAs to indefinitely lock out accounts after 5 failed access attempts? Do the attempts need to happen within a specific period of time?)
+If that is indeed the interpretation, I would expect every CA to consider this as either being able to cause a denial of service or a weakening of the authentication control and, therefore, not really implement it? Or do so in some different way than that interpretation requires, which again circles back to this requirement not being meaningful in practice.
+I'm also not sure I understand the, seemingly circular, logic of "lockout accounts as long as doing so doesn't weaken the security of locking out accounts"
+
+All that said, here's my attempt at a rewrite/clarification to maintain what I believe to be the intent. I'm not particularly happy even with the rewrite, but for the sake of keeping the requirement unchanged I've included it anyway.
+
+[Originating requirement]
+k. Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
+    Is supported by the Certificate System,
+    Cannot be leveraged for a denial of service attack, and
+    Does not weaken the security of this authentication control;
+-->
+The CA MUST ensure security measures are implemented which minimize the susceptability of CA Infrastructure to unauthorized access through repeated attempts to authenticate to or access an account on or with access to CA Infrastructure. These measures SHOULD prevent brute-force attacks which systematically enumerate authentication credentials such as username and password combinations. These measures SHOULD be based on a Risk Assessment.
+<!-- We could also consider listing examples of typical measures, like account lockout policies, rate limiting, and IP blocking. We could also tie the role of these measures more directly to the MFA requirements of 2.2.3, the Password Complexity requirements of 2.2.4, and the monitoring/logging requirements in section 3 (3.1 currently, but that'll probably change). -->
+
+#### 2.2.2 
 <!--
 The next 3 sections seem rather out of place and difficult to "fix", i.e. restate in a way that addresses their intended function (making sure employee laptops/desktops aren't totally insecure) without referencing somewhat archaic modes of operation for many companies. 
 
@@ -374,52 +439,77 @@ CAs and Delegated Third Parties SHALL configure workstations with inactivity tim
 The CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time‐out or system lock;
 
 -->
-#### 2.2.2 
+
 The CA SHOULD ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
 
 The CA MAY allow a Workstation to remain active and unattended if the Workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time‐out or system lock.
 
-The CA MUST ensure personnel assigned to Trusted Roles log out of or lock Workstations when not in active use.
+The CA MUST ensure personnel assigned to Trusted Roles log out of or lock their Workstation(s) when not in active use.
+<!-- Does this mean Trusted Roles just wander around logging out of or locking workstations that no one's using? :thinking_face:
+(I added "their" to try to prevent such an interpretation)-->
 
+#### 2.2.3
 <!--
-FINISHED HERE 7/28/2023
--->
-## 2.2 Password-based Authentication
+Below is a consolidation of requirements for Multi-Factor Authentication or Multi-Party Control.
 
+1.j. Implement Multi-Factor Authentication to each component of the Certificate System that supports Multi-Factor Authentication;
+
+2.m. Enforce Multi-Factor Authentication OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
+
+2.n. Enforce Multi-Factor Authentication for all Trusted Role accounts on Certificate Systems (including those approving the issuance of a Certificate, which equally applies to Delegated Third Parties) that are accessible from outside a Secure Zone or High Security Zone
+
+### 2.3.5
+Enforce Multi‐Factor Authentication for all accounts on CA Infrastructure;
+
+### 2.3.6
+Enforce Multi-Factor Authentication and/or multi‐party authentication for all access to CA Infrastructure;-->
+The CA MUST enforce the use of Multi-Factor Authentication for:
+   1. accounts on CA Infrastructure; and 
+   2. access to CA Infrastructure.
+
+The CA MUST enforce the use of Multi-Party Control for access to any physical CA Infrastructure component.
+#### 2.2.4 
+<!--
+Below is a rephrasing of 2.g to:
+1. Remove prose not related to requirements
+2. Reformat to align with document style
+3. Consolidation or removal of duplicative requirements
+
+2.g. If an authentication control used by a Trusted Role is a username and password, then, where technically feasible, implement the following controls:
+
+    #. For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
+    #. For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
+    #. When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A.
+    #. Frequent password changes have been shown to cause users to select less secure passwords. If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years. Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years.
+
+## 2.2 Password-based Authentication
 If an authentication control used by a Trusted Role is a username and password, then each CA or Delegated Third Party SHALL implement the following controls:
    1. For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
    2. For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi‐Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user’s previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
    3. When developing password policies, CAs SHOULD take into account the password guidance in NIST 800‐63B Appendix A.
    4. If the CA has any policy that requires periodic password changes, that period SHALL NOT be less than two years.
+-->
+The CA SHOULD ensure passwords used as authenticatoin credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
 
-## 2.3 CA Infrastructure Access
+The CA SHALL NOT require periodic password changes with a period less then two (2) years.
 
-Each CA or Delegated Third Party SHALL:
-### 2.3.1 
-Ensure that System access and System account permissions are restricted:
-   1. to persons assigned a Trusted Role associated with such access and permissions; and
-   2. in accordance with the Principle of Least Privilege;
+The CA MUST ensure passwords used as authentication credentials for accounts on CA Infrastructure have a minimum of twelve (12) characters.
 
-### 2.3.2
-Review all System accounts at least every three (3) months and deactivate any accounts that are no longer necessary for operations;
+The CA MUST ensure passwords used as authentication credentials for accounts on Network Equipment or Workstations have a minimum of eight (8) characters.
+#### 2.2.5
+<!-- 
+Slight rephrasing the VPN requirements, also added a definition of "Requirements" since that's used even in prod NSRs, but isn't actually defined.
 
-### 2.3.3 
-Lockout account access to CA Infrastructure after no more than five (5) failed access attempts, provided that this security measure:
-   1. Is supported by the System;
-   2. Cannot be leveraged for a denial of service attack; and
-   3. Does not weaken the security of this authentication control;
+[Originating Requirements]
+2.o. Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:
 
-### 2.3.4
-Implement a process that disables all access by an individual to CA Infrastructure within twenty-four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
+    the remote connection originates from a device owned or controlled by the CA or Delegated Third Party,
 
-<!--### 2.3.5
-Enforce Multi‐Factor Authentication for all accounts on CA Infrastructure;
+    the remote connection is through a temporary, non-persistent encrypted channel that is supported by Multi-Factor Authentication, and
 
-### 2.3.6
-Enforce Multi-Factor Authentication and/or multi‐party authentication for all access to CA Infrastructure;-->
-The CA MUST enforce Multi-Factor Authentication for all accounts on and access to CA Infrastructure.
+    the remote connection is made to a designated intermediary device
 
-The CA MUST enforce Multi‐party Control for all access to physical CA Infrastructure assets.
+    i. located within the CA’s network, ii. secured in accordance with these Requirements, and iii. that mediates the remote connection to the Issuing System.
 
 ### 2.3.7
 Restrict remote administration of and/or access to CA Infrastructure except when:
@@ -429,11 +519,48 @@ Restrict remote administration of and/or access to CA Infrastructure except when
       * is located within the CA’s network;
       * is secured in accordance with these Requirements; and
       * mediates the remote connection to the CA System.
+-->
+The CA MUST ensure any remote connection which enables administration of and/or access to CA Infrastructure:
+   1. originates from a Workstation owned and/or controlled by the CA;
+   2. is made through a temporary, non‐persistent, and encrypted channel;
+   3. is authenticated using Multi‐Factor Authentication; and
+   4. is made to a Network Equipment asset which:
+      * is located within the CA’s network;
+      * is secured in accordance with these Requirements; and
+      * mediates the remote connection to the CA Infrastructure.
+<!-- I think there is still room for improvement on this one (e.g. "mediates" isn't super clear). Aside from that, it's not entirely clear that the limitations set here are balanced to be entirely appropriate/necessary for the security of the CA Infrastructure; I'm not sure what exactly, but it seems like something here could be removed with no decrease in security. -->
 
-# 3. Incident Response and Reporting
+## 3 Logging, Monitoring, Auditing, and Incident Response
+<!--
+Certification Authorities and Delegated Third Parties SHALL:
 
-## 3.1 Logging and Monitoring
-Each CA or Delegated Third Party SHALL:
+a. Implement a System under the control of CA or Delegated Third Party Trusted Roles that continuously monitors, detects, and alerts personnel to any modification to Certificate Systems, Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems unless the modification has been authorized through a change management process. The CA or Delegated Third Party shall respond to the alert and initiate a plan of action within at most twenty-four (24) hours;
+
+b. Identify those Certificate Systems under the control of CA or Delegated Third Party Trusted Roles capable of monitoring and logging system activity, and enable those systems to log and continuously monitor the events specified in Section 5.4.1 (3) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates;
+
+c. Implement automated mechanisms under the control of CA or Delegated Third Party Trusted Roles to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events;
+
+d. Require Trusted Role personnel to follow up on alerts of possible Critical Security Events;
+
+e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
+
+f. Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
+
+g. If continuous automated monitoring and alerting is utilized to satisfy sections 1.h. or 3.e. of these Requirements, respond to the alert and initiate a plan of action within at most twenty-four (24) hours.
+-->
+### 3.1 Logging and Monitoring
+<!-- 
+Here I'm primarily rewording in an attempt to improve clarity and flow/readability of the requirements, adding some (imo) logical expectations as SHOULDs in a couple places.
+
+[Originating Requirements]
+3.a. Implement a System under the control of CA or Delegated Third Party Trusted Roles that continuously monitors, detects, and alerts personnel to any modification to Certificate Systems, Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems unless the modification has been authorized through a change management process. The CA or Delegated Third Party shall respond to the alert and initiate a plan of action within at most twenty-four (24) hours;
+>> Just the first part, not the alerting/plan of action which is in 3.2
+
+3.b. Identify those Certificate Systems under the control of CA or Delegated Third Party Trusted Roles capable of monitoring and logging system activity, and enable those systems to log and continuously monitor the events specified in Section 5.4.1 (3) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates;
+
+3.e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
+
+3.f. Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
 
 ### 3.1.1
 Implement, as part of a Security Support System, continuous monitoring of CA Infrastructure for modifications not authorized through the change management process outlined in Section 1.2;
@@ -443,31 +570,152 @@ Identify CA Infrastructure capable of monitoring and logging System activity and
 
 ### 3.1.3
 Monitor the integrity of System logging processes through:
-   1. a Security Support System's continuous automated monitoring; or
-   2. a review by personnel acting in a Trusted Role at least once every 31 days;
+    a Security Support System's continuous automated monitoring; or
+    a review by personnel acting in a Trusted Role at least once every 31 days;
 
 ### 3.1.4
 Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
+-->
+#### 3.1.1
+The CA MUST identify and document the monitoring and logging capabilities of CA Infrastructure and Network Equipment.
 
-## 3.2 Log Processing and Alerting
-Each CA or Delegated Third Party SHALL:
+The CA SHOULD establish, evaluate, and maintain policies and procedures for
+   1. identifying and utilizing the monitoring and logging capabilities of CA Infrastructure and Network Equipment; and
+   2. retaining, parsing, securing, and archiving the audit logs output by CA Infrastructure and Network Equipment.
+<!-- This is intended to be helpful additional guidance that's almost certainly already done by most or all CAs. I think the first line is clearly part of 3.1.1, 3.1.1.1, and 3.1.1.2, but the second part is imo also strongly implied by 3.1.2.1, 3.2, etc.-->
+The CA SHOULD review and update such policies and procedures at least annually.
+
+##### 3.1.1.1
+The CA MUST ensure the monitoring and logging capabilities of CA Infrastructure and Network Equipment are enabled to the extent and as necessary to meet
+   1. these Requirements; and
+   2. applicable obligations which depend on such audit logs (such as the requirements in Section 5.4.1 (3) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+
+##### 3.1.1.2
+The CA MUST ensure audit logs produced by the monitoring and logging capabilities of CA Infrastructure and Network Equipment include activities and/or events that occur on CA Infrastructure
+   1. necessary to detect possible:
+      1. Critical Security Events; and
+      2. modifications to CA Infrastructure not authorized through the change management process outlined in Section 1.3; and
+   2. with sufficient detail to meet
+      1. these Requirements; and
+      2. applicable obligations which depend on such audit logs (such as the requirements in Section 5.4.1 (3) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+
+#### 3.1.2
+<!--
+3.e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
+>> alerting moved down to 3.2
+
+### 3.1.3
+Monitor the integrity of System logging processes through:
+   1. a Security Support System's continuous automated monitoring; or
+   2. a review by personnel acting in a Trusted Role at least once every 31 days;
+-->
+The CA MUST ensure the integrity of logging processes within CA Infrastructure is monitored through
+   1. continuous automated monitoring operating within CA Infrastructure; or
+   2. a review by personnel assigned to applicable Trusted Roles at least once every 31 days.
+<!-- 
+I'm intentionally not including the "system is online" requirement here based on the assumption(s) that:
+   1. we'll be moving the Root CA System requirements to their own section or possibly even document (as, at that point, we're not really talking about a network — we're talking about a _lack_ of a network — and we're not really talking about a security system — we're talking very specifically about a much narrower scope, the Root CA System, which is far from anything resembling a general security system (Though I'll admit I also don't recall if separating it into its own document has already been discussed and rejected by majority consensus)); 
+   2. that none of the other parts of CA Infrastructure are kept inherently, persistently, or in a default state of "offline", like a Root CA System;
+   3. that the phrase in the current requirements "if a human review is utilized and the system is online" was/is intended to specifically (or at least primarily) refer to the Root CA System; and
+   4. that, while I don't think it'd be the best idea to _mandate_ that a manual review be performed on (inherently, persistently, and in a default state of) offline Root CA Systems, it doesn't seem preternaturally *bad* to _allow_ the CA do monitor their logs in such a way — I don't think it's terribly uncommon for larger CAs with many service offerings to perform an offline key ceremony at least as frequently as monthly.
+If any of these assumptions is incorrect, we should probably/possibly re-add the requirement that manual review can only occur for online systems.
+-->
+
+<!-- Comparing to similar requirements elsewhere, this should also probably have a detection+criteria (e.g. anomalous or compromised logs) here and then alerting somewhere, probably below like for 3.1.1.2. Not sure I really like how this reads, but I think it conveys the general expectation with the exception of the vagueness of "reasonably suspect".-->
+The CA MUST ensure such integrity monitoring is configured and managed in a manner sufficiently effective to identify possible audit log compromise.
+
+#### 3.1.2.1
+<!--
+There's a bit of somewhat subtle, potentially unnecessary, specificity here in that CAs must currently monitor archival/retention of logs in order to ensure they're retained correctly, but it's not imo true that monitoring is an absolute necessecity for the outcome of having audit logs archived/retained for the appropriate amount of time.
+The phrasing "the disclosed business practices" is unclear w.r.t. what it's referencing (seemingly "the CA's disclosed business practices"?), but I think copying the language from 3.1.1.1 and 3.1.1.2 could work here as well to keep this concept consistently referenced.
+
+There are also several very closely adjacent requirements not specified here, such as secure storage and access control. These could be inferred by the requirement that they be retained (which would imply they not be lost, damaged, or otherwise made unavailable in any form other than the form in which they were originally archived/retained), but perhaps highlighting these aspects would help lead to better outcomes.
+
+[Originating Requirements]
+### 3.1.4
+Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
+
+f. Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
+-->
+The CA MUST ensure audit logs are retained and/or archived for the amount of time necessary to meet
+   1. these Requirements; and
+   2. applicable obligations which depend on such audit logs (such as the requirements in Section 5.4.1 (3) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+
+The CA SHOULD ensure retained and/or archived audit logs are kept and managed in a manner sufficiently effective to prevent unapproved alteration or access.
+
+### 3.2 Audit Log Processing and Alerting
+<!-- 
+I'm breaking things apart to improve clarity around the various components (processing, alerting, following up). I think there are also fairly substantial issues with 3.d ("follow up" is almost meaningless) and 3.g:
+   1. it's not clear how continuous monitoring/alerting satisfy 1.h (a part of 1.h, sure, but all of the change management process certainly doesn't fit into monitoring/alerting)
+   2. the requirements for responding and initiating a plan of action are weak/vague
+   3. the presence of a timeline for automated monitoring/alerting highlights the stark lack of a timeline for non-automated monitoring/alerting
+   4. 3.g requires responding to an alert within 24 hours, but only for 3.e and 1.h, somehow missing the "main" automated alerting requirement which is 3.c
+
+3.c. Implement automated mechanisms under the control of CA or Delegated Third Party Trusted Roles to process logged system activity and alert personnel, using notices provided to multiple destinations, of possible Critical Security Events;
+
+3.d. Require Trusted Role personnel to follow up on alerts of possible Critical Security Events;
+
+3.g. If continuous automated monitoring and alerting is utilized to satisfy sections 1.h. or 3.e. of these Requirements, respond to the alert and initiate a plan of action within at most twenty-four (24) hours.
+
+   1.h. Ensure that the CA’s security policies encompass a change management process, following the principles of documentation, approval and review, and to ensure that all changes to Certificate Systems, Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems follow said change management process;
+
+   3.e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
 
 ### 3.2.1
 Implement automated mechanisms under the control of individuals the CA or Delegated Third Party Trusted Roles to process logged system activity and identify possible Critical Security Events;
 
 ### 3.2.2
 Alert personnel in relevant Trusted Roles, using notices provided to multiple destinations, of:
-   1. possible Critical Security Events; and
-   2. unauthorized changes to CA Infrastructure (as identified by 3.1.1);
+    possible Critical Security Events; and
+    unauthorized changes to CA Infrastructure (as identified by 3.1.1);
 
 ### 3.2.3
 Require Trusted Role personnel to respond to alerts within twenty-four (24) hours.
-
 Once the responder(s) has confirmed the legitimacy of the alert, the further response MUST include:
-   1. identifying the potential impact and severity of the event;
-   2. initiating relevant containment actions (such as isolating a System from the network, disabling accounts, or other mitigation measures); and
-   3. developing and initiating an appropriate risk-based plan of action to fully remediate the Critical Security Event.
+    identifying the potential impact and severity of the event;
+    initiating relevant containment actions (such as isolating a System from the network, disabling accounts, or other mitigation measures); and
+    developing and initiating an appropriate risk-based plan of action to fully remediate the Critical Security Event.
+-->
 
+#### 3.2.1
+The CA MUST ensure audit logs are processed:
+   1. through automated mechanisms under the control of personnel assigned to applicable Trusted Roles; and
+   2. in a manner sufficiently effective to minimally identify possible:
+      1. Critical Security Events; and
+      2. unauthorized changes to CA Infrastructure.
+
+#### 3.2.2
+<!-- 
+3.g's reference to 3.e makes it seem that alerts originating not from processing audit logs, but from ensuring audit log integrity should also be included in the same "pipeline" as the 2 classes of alerts that come from processing audit logs. Though there's a requirement to ensure audit log integrity, there's not really a requirement to do something which results in identifying when audit log integrity is compromised, so there's no origin for the "identification" (which, when it occurs, otherwise results in the "alert" which results in the "response" which results in the "plan of action")
+So I added that to 3.1.2.
+-->
+The CA MUST ensure personnel assigned to applicable Trusted Roles are alerted via multiple mechanisms and/or communication channels of identified possible:
+   1. audit log compromise;
+   2. Critical Security Events; and
+   3. unauthorized changes to CA Infrastructure.
+
+#### 3.2.3
+The CA MUST ensure personnel assigned to applicable Trusted Roles commence an initial response to alerts of Section 3.2.2 within twenty-four (24) hours of the alert being generated.
+<!--
+I'm keeping the requirement essentially (i.e. in essence) the same, but I do think it would be an improvement to also identify a requirement for when the initial response must conclude, e.g.
+"The CA MUST ensure the initial response is completed within seven (7) days of commencing."
+-->
+
+##### 3.2.3.1
+The CA MUST ensure the initial response confirms whether the alert identifies a legitimate
+   1. audit log compromise;
+   2. Critical Security Event; and/or
+   3. unauthorized change to the CA Infrastructure.
+
+The CA MUST ensure personnel assigned to applicable Trusted Roles create and follow an incident response plan for all legitimate alerts. 
+
+##### 3.2.3.2
+The CA SHOULD ensure incident response plans minimally include:
+   1. identification of the potential impact, scope, and severity of the incident;
+   2. containment of the incident to minimize further impact; and
+   3. identification and mitigation or eradication of the incident root cause(s).
+
+<!--FINISHED HERE 8/26/2023-->
 # 4. Vulnerability Detection and Patch Management
 
 CSA CCM stuff goes here(?)
