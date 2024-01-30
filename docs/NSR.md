@@ -103,7 +103,9 @@ The following are outcomes that this document seeks to achieve:
 Each factor is independent of the other(s). 
 Authentication based on the possession of a certificate can be used as part of Multi-factor Authentication only if the associated Private Key is stored in a Secure Key Storage Device.
 
-**Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
+**Multi-Party Control**: An access control mechanism which requires either:
+   1. two or more separate and authorized users to successfully authenticate with user-specific, unique, and hardware-backed authentication credentials prior to access being granted; or
+   2. two or more separate and authorized users to successfully authenticate with user-specific and unique Multi-Factor Authentication credentials prior to access being granted.
 
 **National Vulnerability Database (NVD)**: A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/>).
 
@@ -185,11 +187,13 @@ CA Infrastructure MUST be segmented into separate networks based on the function
 
 ##### 1.1.1.1
 
-Network segmentation MUST be designed and implemented using appropriate and applicable Network Equipment, such as:
+Network segmentation MUST be designed and implemented using appropriate and applicable Network Equipment hardware, such as:
    * firewalls
-   * network access controls
-   * virtual LANs (VLANs) and VLAN access control lists
+   * network switches 
    * physically separate networks
+
+Network segmentation MAY leverage software, such as:
+   * virtual LANs (VLANs) and VLAN access control lists
    * software-defined networking
    * virtual private networks (VPNs)
 
