@@ -1,11 +1,11 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 1.7
+subtitle: Version A.B
 author:
   - CA/Browser Forum
-date: 5 April, 2021
+date: DD MMMM, YYYY
 copyright: |
-  Copyright 2021 CA/Browser Forum
+  Copyright YYYY CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -425,4 +425,32 @@ The CA SHOULD ensure incident response plans minimally include:
 
 # 4. Vulnerability Detection and Patch Management
 
-CSA CCM stuff goes here(?)
+Certification Authorities and Delegated Third Parties SHALL:
+
+a. Implement intrusion detection and prevention controls under the control of CA or Delegated Third Party Trusted Roles to protect Certificate Systems against common network and system threats;
+
+b. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities;
+
+c. Undergo or perform a Vulnerability Scan
+
+    within one (1) week of receiving a request from the CA/Browser Forum,
+    after any system or network changes that the CA determines are significant, and
+    at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
+
+d. Undergo a Penetration Test on the CA’s and each Delegated Third Party’s Certificate Systems on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant;
+
+e. Record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity (or collective group thereof) with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test; and
+
+f. Do one of the following within ninety-six (96) hours of discovery of a Critical Vulnerability not previously addressed by the CA’s vulnerability correction process:
+
+    Remediate the Critical Vulnerability;
+
+    If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
+
+    i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical (such as those with a CVSS score of 10.0) and ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise; or
+
+    Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
+
+    i. the CA disagrees with the NVD rating, ii. the identification is a false positive, iii. the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or iv. other similar reasons.
+
+g. Apply recommended security patches to Certificate Systems within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
