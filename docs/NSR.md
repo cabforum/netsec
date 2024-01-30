@@ -433,9 +433,9 @@ b. Document and follow a vulnerability correction process that addresses the ide
 
 c. Undergo or perform a Vulnerability Scan
 
-    within one (1) week of receiving a request from the CA/Browser Forum,
-    after any system or network changes that the CA determines are significant, and
-    at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
+   1. within one (1) week of receiving a request from the CA/Browser Forum,
+   2. after any system or network changes that the CA determines are significant, and
+   3. at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
 
 d. Undergo a Penetration Test on the CA’s and each Delegated Third Party’s Certificate Systems on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant;
 
@@ -443,14 +443,17 @@ e. Record evidence that each Vulnerability Scan and Penetration Test was perform
 
 f. Do one of the following within ninety-six (96) hours of discovery of a Critical Vulnerability not previously addressed by the CA’s vulnerability correction process:
 
-    Remediate the Critical Vulnerability;
+   1. Remediate the Critical Vulnerability;
+   2. If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
 
-    If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
+      i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical (such as those with a CVSS score of 10.0) and
+      ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise; or
 
-    i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical (such as those with a CVSS score of 10.0) and ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise; or
+   3. Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
 
-    Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
-
-    i. the CA disagrees with the NVD rating, ii. the identification is a false positive, iii. the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or iv. other similar reasons.
+      i. the CA disagrees with the NVD rating,
+      ii. the identification is a false positive,
+      iii. the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or
+      iv. other similar reasons.
 
 g. Apply recommended security patches to Certificate Systems within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
