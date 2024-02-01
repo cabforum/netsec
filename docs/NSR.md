@@ -101,11 +101,8 @@ The following are outcomes that this document seeks to achieve:
    2. something the user has (possession factor); and 
    3. something the user is (inherence factor). 
 Each factor is independent of the other(s). 
-Authentication based on the possession of a certificate can be used as part of Multi-factor Authentication only if the associated Private Key is stored in a Secure Key Storage Device.
 
-**Multi-Party Control**: An access control mechanism which requires either:
-   1. two or more separate and authorized users to successfully authenticate with user-specific, unique, and hardware-backed authentication credentials prior to access being granted; or
-   2. two or more separate and authorized users to successfully authenticate with user-specific and unique Multi-Factor Authentication credentials prior to access being granted.
+**Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
 
 **National Vulnerability Database (NVD)**: A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/>).
 
@@ -151,10 +148,6 @@ Authentication based on the possession of a certificate can be used as part of M
 
 **SANS Top 25**: A list created with input from the SysAdmin, Audit, Network, and Security (SANS) Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see <http://www.sans.org/top25-software-errors/>).
 
-**Secure Key Storage Device**: A device certified as:
-   * meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
-   * validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
-
 **Security Support System**: A system or set of systems supporting the security of the CA Infrastructure, which minimally includes:
    1. authentication;
    2. network boundary control;
@@ -181,7 +174,7 @@ Authentication based on the possession of a certificate can be used as part of M
 
 ### 1.1 Network Segmentation
 
-#### 1.1.1
+#### 1.1.1 <!---  --->
 
 CA Infrastructure MUST be segmented into separate networks based on the functional and/or logical relationships of CA Infrastructure components.
 
@@ -207,11 +200,11 @@ Network segmentation MUST be designed and implemented in a manner that:
 
 ### 1.2 CA Infrastructure Security
 
-#### 1.2.1
+#### 1.2.1 <!---  --->
 
 CA Infrastructure MUST be in a Physically Secure Environment.
 
-#### 1.2.2
+#### 1.2.2 <!---  --->
 
 CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
    1. between CA Infrastructure components; and
@@ -221,7 +214,7 @@ CA Infrastructure and Network Equipment MUST be implemented and configured in a 
    1. all connections, communications, applications, services, protocols, and ports not used are removed and/or disabled; and 
    2. only connections, communications, applications, services, protocols, and ports necessary and approved under the Principle of Least Privilege are enabled.
 
-#### 1.2.3
+#### 1.2.3 <!---  --->
 
 Equivalent security MUST be implemented on all Systems on the same network as any CA Infrastructure component.
 
@@ -267,13 +260,13 @@ Each Trusted Role MUST be assigned responsibilities, privileges, and access in a
    1. the Principle of Least Privilege; and
    2. requirements of Multi-Party Control.
 
-#### 2.1.1
+#### 2.1.1 <!---  --->
 
 The CA MUST ensure personnel assigned to a Trusted Role act only within the scope of their Trusted Role(s) when performing responsibilities, using privileges, or using access assigned to that Trusted Role.
 
 ### 2.2 Access Management
 
-#### 2.2.1
+#### 2.2.1 <!--- Access Limitations --->
 
 The CA MUST ensure access to CA Infrastructure and/or Network Equipment is:
    1. limited to personnel assigned to applicable Trusted Roles; and
@@ -303,7 +296,7 @@ The CA MUST ensure any account that is not necessary for the operation of CA Inf
 
 The CA MUST ensure security measures are implemented that minimize the susceptibility of CA Infrastructure to unauthorized access through repeated attempts to authenticate to or access an account that has access to CA Infrastructure. These measures SHOULD prevent brute-force attacks which systematically enumerate authentication credentials such as username and password combinations. These measures SHOULD be based on a Risk Assessment.
 
-#### 2.2.2 
+#### 2.2.2 <!--- Workstation Security --->
 
 The CA SHOULD ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
 
@@ -311,15 +304,29 @@ The CA MAY allow a Workstation to remain active and unattended if the Workstatio
 
 The CA MUST ensure personnel assigned to Trusted Roles log out of or lock their Workstation(s) when not in active use.
 
-#### 2.2.3
+#### 2.2.3 <!--- Multi-Factor Authentication --->
 
 The CA MUST enforce the use of Multi-Factor Authentication for:
    1. accounts on CA Infrastructure; and 
    2. access to CA Infrastructure.
 
-The CA MUST enforce the use of Multi-Party Control for access to any physical CA Infrastructure component.
+Authentication based on the possession of a certificate can be used as part of Multi-factor Authentication only if the associated Private Key is stored in a key storage device certified as:
+   * meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
+   * validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
 
-#### 2.2.4 
+#### 2.2.4 <!--- Multi-Party Control --->
+
+The CA MUST enforce the use of Multi-Party Control for physical access to any CA Infrastructure component.
+
+Where multiple CA Infrastructure components are located in a physically isolated and dedicated Physically Secure Environment, Multi-Party Control enforced for physical access to such a Physically Secure Environment satisfies this requirement.
+
+<!---
+The CA MUST enforce the use of Multi-Party Control for physical access to any Physically Secure Environment which contains CA Infrastructure.
+
+The CA SHOULD enforce the use of Multi-Party Control for physical access to any CA Infrastructure component.
+--->
+
+#### 2.2.5 <!--- Password Management --->
 
 The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
 
@@ -329,7 +336,7 @@ The CA MUST ensure passwords used as authentication credentials for accounts on 
 
 The CA MUST ensure passwords used as authentication credentials for accounts on Network Equipment or Workstations have a minimum of eight (8) characters.
 
-#### 2.2.5
+#### 2.2.6 <!--- Remote Access --->
 
 The CA MUST ensure any remote connection that enables administration of and/or access to CA Infrastructure:
    1. originates from a Workstation owned and/or controlled by the CA;
@@ -344,7 +351,7 @@ The CA MUST ensure any remote connection that enables administration of and/or a
 
 ### 3.1 Monitoring and Logging
 
-#### 3.1.1
+#### 3.1.1 <!--- Enabling Monitoring and Logging --->
 
 The CA MUST identify and document the monitoring and logging capabilities of CA Infrastructure and Network Equipment.
 
@@ -370,7 +377,7 @@ The CA MUST ensure audit logs produced by the monitoring and logging capabilitie
       1. these Requirements; and
       2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
 
-#### 3.1.2
+#### 3.1.2 <!--- Audit Log Integrity --->
 
 The CA MUST ensure the integrity of logging processes within CA Infrastructure is monitored through:
    1. continuous automated monitoring operating within CA Infrastructure; or
@@ -388,7 +395,7 @@ The CA SHOULD ensure retained and/or archived audit logs are kept and managed in
 
 ### 3.2 Audit Log Processing and Alerting
 
-#### 3.2.1
+#### 3.2.1 <!---  --->
 
 The CA MUST ensure audit logs are processed:
    1. through automated mechanisms under the control of personnel assigned to applicable Trusted Roles; and
@@ -396,14 +403,14 @@ The CA MUST ensure audit logs are processed:
       1. Critical Security Events; and
       2. unauthorized changes to CA Infrastructure.
 
-#### 3.2.2
+#### 3.2.2 <!---  --->
 
 The CA MUST ensure personnel assigned to applicable Trusted Roles are alerted via multiple mechanisms and/or communication channels of identified possible:
    1. audit log compromise;
    2. Critical Security Events; and
    3. unauthorized changes to CA Infrastructure.
 
-#### 3.2.3
+#### 3.2.3 <!---  --->
 
 The CA MUST ensure personnel assigned to applicable Trusted Roles commence an initial response to alerts of [Section 3.2.2](#322) within twenty-four (24) hours of the alert being generated.
 
