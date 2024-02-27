@@ -336,9 +336,7 @@ Authentication based on the possession of a certificate can be used as part of M
 
 ##### 2.2.4
 
-The CA MUST enforce the use of Multi-Party Control for physical access to any CA Infrastructure component.
-
-Where multiple CA Infrastructure components are located in a physically isolated and dedicated Physically Secure Environment, Multi-Party Control enforced for physical access to such a Physically Secure Environment satisfies this requirement.
+The CA MUST enforce the use of Multi-Party Control for physical access to any Root CA System.
 
 ##### 2.2.5
 
