@@ -188,7 +188,7 @@ CA Infrastructure MUST be segmented into separate networks based on the function
 
 ###### 1.1.1.1
 
-Network segmentation MUST be designed and implemented using appropriate and applicable Network Equipment hardware, such as:
+Network segmentation MUST be designed and implemented using Network Equipment, such as:
 
 * firewalls
 * network switches
@@ -202,12 +202,12 @@ Network segmentation MAY leverage software, such as:
 
 ###### 1.1.1.2
 
-Network segmentation MUST be designed and implemented in a manner that:
+Network segmentation SHOULD be designed and implemented in a manner that:
 
    1. minimizes attack surfaces;
    2. limits lateral movement within networks;
    3. restricts traffic flow between different network segments; and
-   4. protects all components of the CA Infrastructure from unauthorized access.
+   4. protects all CA Infrastructure components from unauthorized access.
 
 #### 1.2 CA Infrastructure Security
 
@@ -251,7 +251,7 @@ The CA MUST ensure the change management process:
 
    1. enables identification, documentation, and remediation of risks associated with introducing, modifying, or removing:
       * Trusted Role definitions;
-      * personnel in Trusted Roles;
+      * Trusted Role appointments;
       * Network Equipment; or
       * CA Infrastructure;
    2. addresses managing exceptions and responding to emergencies; and
@@ -261,8 +261,8 @@ The CA MUST ensure that all changes are completed in accordance with such a chan
 
    1. Trusted Role definitions;
    2. Trusted Role appointments;
-   3. CA Infrastructure; and
-   4. Network Equipment.
+   3. Network Equipment; and
+   4. CA Infrastructure.
 
 ### 2. Access Control
 
