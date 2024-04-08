@@ -53,6 +53,7 @@ The following are outcomes that this document seeks to achieve:
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
+| 1.8 | NS-003 | Restructure NCSSRs |  |  |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
@@ -178,6 +179,8 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
+Prior to 2024-10-15, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-10-15, the CA SHALL adhere to these Requirements.
+
 ### 1. CA Infrastructure and Network Equipment Configuration
 
 #### 1.1 Network Segmentation
@@ -266,6 +269,8 @@ The CA MUST ensure that all changes are completed in accordance with such a chan
 
 ### 2. Access Control
 
+Within this Section 2, references to "access" include all physical and logical access, unless otherwise specified.
+
 #### 2.1 Trusted roles
 
 The CA MUST define Trusted Roles for the personnel who design, build, develop, implement, operate, and maintain its CA Infrastructure and Network Equipment.
@@ -302,13 +307,13 @@ The CA MUST NOT allow group accounts or shared role credentials to authenticate 
 
 The CA MUST ensure authentication credentials are changed or revoked when associated authorizations are changed or revoked.
 
-The CA MUST ensure all access to CA Infrastructure and Network Equipment is disabled for personnel within twenty-four (24) hours of the termination of an individual's employment or contracting relationship.
+The CA MUST ensure access to CA Infrastructure and Network Equipment is disabled for personnel within twenty-four (24) hours of the termination of an individual's employment or contracting relationship.
 
 ###### 2.2.1.4
 
-The CA MUST ensure any account capable of authenticating to or accessing CA Infrastructure or Network Equipment is reviewed at a minimum of every three (3) months.
+The CA MUST ensure any account capable of authenticating to or accessing CA Infrastructure or Network Equipment is reviewed at a minimum frequency of every three (3) months.
 
-The CA MUST ensure any account that is not necessary for the operation of CA Infrastructure or Network Equipment is deactivated or removed such that the account is no longer capable of authenticating to or accessing CA Infrastructure nor Network Equipment.
+The CA MUST ensure any account that is not necessary for the operation of CA Infrastructure or Network Equipment is deactivated or removed such that the account is no longer capable of authenticating to or accessing CA Infrastructure or Network Equipment.
 
 ###### 2.2.1.5
 
@@ -360,7 +365,7 @@ The CA MUST ensure any remote connection that enables administration of and/or a
       * is secured in accordance with these Requirements; and
       * mediates the remote connection to the CA Infrastructure.
 
-### 3 Monitoring, Logging, Auditing, and Incident Response
+### 3. Monitoring, Logging, Auditing, and Incident Response
 
 #### 3.1 Monitoring and Logging
 
