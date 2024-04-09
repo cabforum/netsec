@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0
 author:
   - CA/Browser Forum
-date: DD MMMM, YYYY
+date: 09 April, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2024-10-15, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-10-15, the CA SHALL adhere to these Requirements.
+Prior to 2024-11-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-11-12, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
@@ -385,7 +385,7 @@ The CA SHOULD review and update such policies and procedures at least annually.
 The CA MUST ensure the monitoring and logging capabilities of CA Infrastructure and Network Equipment are enabled to the extent necessary to meet:
 
    1. these Requirements; and
-   2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+   2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates).
 
 ###### 3.1.1.2
 
@@ -396,7 +396,7 @@ The CA MUST ensure audit logs produced by the monitoring and logging capabilitie
       2. modifications to CA Infrastructure not authorized through the change management process outlined in [Section 1.3](#13-change-management); and
    2. with sufficient detail to meet
       1. these Requirements; and
-      2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+      2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates).
 
 ##### 3.1.2
 
@@ -412,7 +412,7 @@ The CA MUST ensure such integrity monitoring is configured and managed in a mann
 The CA MUST ensure audit logs are retained and/or archived for the amount of time necessary to meet:
 
    1. these Requirements; and
-   2. applicable obligations which depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates).
+   2. applicable obligations which depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates).
 
 The CA SHOULD ensure retained and/or archived audit logs are kept and managed in a manner sufficiently effective to prevent unapproved alteration or access.
 
