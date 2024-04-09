@@ -457,37 +457,35 @@ The CA SHOULD ensure incident response plans minimally include:
    2. containment of the incident to minimize further impact; and
    3. identification and mitigation or eradication of the incident root cause(s).
 
-### 4. Vulnerability Detection and Patch Management
+# 4. Vulnerability Management
+Certification Authorities MUST implement policies and procedures for identifying, evaluating, and resolving security vulnerabilities. 
 
-Certification Authorities and Delegated Third Parties SHALL:
+## 4.1 Inventory of Systems
 
-a. Implement intrusion detection and prevention controls under the control of CA or Delegated Third Party Trusted Roles to protect Certificate Systems against common network and system threats;
+Certification Authorities MUST define an inventory of systems that perform the following CA functions: certificate request, certificate validation, signing, certificate revocation, serving certificate status information, key escrow. Policies and procedures MUST apply to all systems in the inventory of systems.
 
-b. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities;
+The policies and procedures SHOULD also apply to Systems which perform Audit Logging and Monitoring, IDPSes andSystems which perform/manage user or machine authentication.
 
-c. Undergo or perform a Vulnerability Scan
+## 4.2 Vulnerability management timeframe
 
-   1. within one (1) week of receiving a request from the CA/Browser Forum,
-   2. after any system or network changes that the CA determines are significant, and
-   3. at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
+Certification Authorities MUST establish a risk-based timeframe for responding and remediating critical and non-critical vulnerabilities.
 
-d. Undergo a Penetration Test on the CA’s and each Delegated Third Party’s Certificate Systems on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant;
+## 4.3 Intrusion Detection and Prevention
 
-e. Record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity (or collective group thereof) with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test; and
+Intrusion detection and prevention controls MUST protect the inventory of systems against common network and system threats.
 
-f. Do one of the following within ninety-six (96) hours of discovery of a Critical Vulnerability not previously addressed by the CA’s vulnerability correction process:
+## 4.4 Vulnerability Correction
 
-   1. Remediate the Critical Vulnerability;
-   2. If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
+A documented vulnerability correction process MUST be comprised of:  
+  1. periodic vulnerability scanning;
+  2. identification; 
+  3. review;
+  4. response; and 
+remediation  (i.e. vulnerabilities are tracked to ensure their remediation is completed within a defined timeframe)
 
-      i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical (such as those with a CVSS score of 10.0) and
-      ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise; or
+## 4.5 Penetration Testing
 
-   3. Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
-
-      i. the CA disagrees with the NVD rating,
-      ii. the identification is a false positive,
-      iii. the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or
-      iv. other similar reasons.
-
-g. Apply recommended security patches to Certificate Systems within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
+A defined program for performing penetration tests MUST ensure that:
+  1. penetration tests are performed at least on an annual basis and after infrastructure or application changes that are organizationally defined as significant;
+  2. penetration tests are performed by a person or entity (or collective group thereof) with the necessary skills, tools, proficiency, code of ethics, and sufficient independence; and
+  3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in section 4.4.
