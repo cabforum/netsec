@@ -464,7 +464,7 @@ Certification Authorities MUST implement policies and procedures for identifying
 
 Certification Authorities MUST define an inventory of systems that perform the following CA functions: certificate request, certificate validation, signing, certificate revocation, serving certificate status information, key escrow. Policies and procedures MUST apply to all systems in the inventory of systems.
 
-The policies and procedures SHOULD also apply to Systems which perform Audit Logging and Monitoring, IDPSes andSystems which perform/manage user or machine authentication.
+The policies and procedures SHOULD also apply to Systems which perform Audit Logging and Monitoring, IDPSes and Systems which perform/manage user or machine authentication.
 
 ## 4.2 Vulnerability management timeframe
 
