@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0
 author:
   - CA/Browser Forum
-date: 09 April, 2024
+date: 05 June, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -53,7 +53,7 @@ The following are outcomes that this document seeks to achieve:
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
-| 1.8 | NS-003 | Restructure NCSSRs |  |  |
+| 2.0 | NS-003 | Restructure NCSSRs | 06-May-2024 | 05-Jun-2024 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
