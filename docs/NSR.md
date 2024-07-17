@@ -74,16 +74,15 @@ The following are outcomes that this document seeks to achieve:
 
 **Certificate System**: A system used by a CA or Delegated Third Party to access, process, or manage data or provide services related to:
 
-   1.  identity validation;
-   2.  identity authentication;
-   3.  account registration;
-   4.  certificate application;
-   5.  certificate validation;
-   7.  certificate approval;
-   7.  certificate issuance;
-   8.  certificate revocation;
-   9.  authoritative certificate status; or
-   10. key escrow.
+   1. identity validation;
+   2. identity authentication;
+   3. account registration;
+   4. certificate application;
+   5. certificate approval;
+   6. certificate issuance;
+   7. certificate revocation;
+   8. authoritative certificate status; or
+   9. key escrow.
 
 **Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/vuln-metrics/cvss>).
 
