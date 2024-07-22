@@ -72,7 +72,7 @@ The following are outcomes that this document seeks to achieve:
 
 **Certificate Management System**: A system used by a CA or Delegated Third Party to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
 
-**Certificate System**: A system used by a CA or Delegated Third Party to access, process, or manage data or provide services related to:
+**Certificate System**: A system used by a CA or Delegated Third Party to access, process, or manage data or provide services related to performing:
 
    1. identity validation;
    2. identity authentication;
@@ -81,7 +81,7 @@ The following are outcomes that this document seeks to achieve:
    5. certificate approval;
    6. certificate issuance;
    7. certificate revocation;
-   8. authoritative certificate status; or
+   8. generation and signing of authoritative certificate status; or
    9. key escrow.
 
 **Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/vuln-metrics/cvss>).
