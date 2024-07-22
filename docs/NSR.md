@@ -109,7 +109,7 @@ Each factor is independent of the other(s).
 
 **National Vulnerability Database (NVD)**: A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/>).
 
-**Network Equipment**: Hardware devices and components that facilitate communication and data transfer within the CA Infrastructure.
+**Network Equipment**: Hardware devices and other components that facilitate communication and data transfer within the CA Infrastructure.
 
 **OWASP Top Ten**: A list of application vulnerabilities published by the Open Web Application Security Project (see <https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project>).
 
