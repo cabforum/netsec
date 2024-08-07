@@ -459,7 +459,7 @@ The CA SHOULD ensure incident response plans minimally include:
 
 ### 4. Vulnerability Management
 
-The CA MUST minimally implement the policies and procedures in this Section for identifying, evaluating, and resolving security vulnerabilities.
+The CA MUST implement the policies and procedures in this Section for identifying, evaluating, and resolving security vulnerabilities.
 
 These policies and procedures MUST apply to all Certificate Systems.
 
@@ -504,9 +504,7 @@ Some common network and system threats include, but are not limited to:
 
 #### 4.4 Vulnerability Correction
 
-The CA MUST document and follow a vulnerability correction process.
-
-A documented vulnerability correction process MUST minimally be comprised of:  
+The CA MUST document and follow a vulnerability correction process that includes:
 
    1. periodic vulnerability scanning;
    2. identification;
@@ -518,7 +516,7 @@ A documented vulnerability correction process MUST minimally be comprised of:
 
 The CA MUST define and follow a program for performing penetration tests.
 
-A defined program for performing penetration tests MUST minimally ensure that:
+A defined program for performing penetration tests MUST ensure that:
 
    1. penetration tests are performed:
       * at least on an annual basis; and
