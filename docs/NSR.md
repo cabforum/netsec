@@ -172,10 +172,7 @@ Each factor is independent of the other(s).
 
 **Vulnerability Scan**: A process that uses manual or automated tools to probe internal and external systems to check and report on the status of operating systems, services, and devices exposed to the network and the presence of vulnerabilities listed in the NVD, OWASP Top Ten, or SANS Top 25.
 
-**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is:
-
-   1. connected to the same network as CA Infrastructure and/or Network Equipment; and
-   2. capable of accessing CA Infrastructure and/or Network Equipment.
+**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is capable of accessing CA Infrastructure and/or Network Equipment with elevated privileges.
 
 ## Requirements
 
@@ -223,7 +220,7 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
 
    1. between CA Infrastructure components; and
-   2. between CA Infrastructure and non-CA Infrastructure.
+   2. between CA Infrastructure and non-CA Infrastructure under CA management.
 
 CA Infrastructure and Network Equipment MUST be implemented and configured in a manner that minimizes unnecessary active components and capabilities such that:
 
@@ -301,7 +298,7 @@ The CA MUST ensure personnel assigned to Trusted Roles that are authorized to ac
 
 ###### 2.2.1.2
 
-The CA MUST NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment.
+The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. When group accounts or shared role credentials are used, the CA MUST implement compensating controls, such as strict access control and auditing of system access.
 
 ###### 2.2.1.3
 
@@ -321,11 +318,7 @@ The CA MUST ensure security measures are implemented that minimize the susceptib
 
 ##### 2.2.2
 
-The CA SHOULD ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
-
-The CA MAY allow a Workstation to remain active and unattended if the Workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time‐out or system lock.
-
-The CA MUST ensure personnel assigned to Trusted Roles log out of or lock their Workstation(s) when not in active use.
+The CA MUST ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
 
 ##### 2.2.3
 
@@ -347,11 +340,11 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 
 The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
 
-The CA SHALL NOT require periodic password changes with a period less than two (2) years.
+The CA SHOULD NOT require periodic password changes with a period less than two (2) years.
 
-The CA MUST ensure passwords used as authentication credentials for accounts on CA Infrastructure have a minimum of twelve (12) characters.
+The CA MUST require that passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment or Workstations have a minimum of twelve (12) characters.
 
-The CA MUST ensure passwords used as authentication credentials for accounts on Network Equipment or Workstations have a minimum of eight (8) characters.
+The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are programmatically generated and stored in a credential manager. Access to credentials stored in a credential manager MUST be limited to personnel based on the Principle of Least Privilege.
 
 ##### 2.2.6
 
