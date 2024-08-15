@@ -469,11 +469,47 @@ These policies and procedures SHOULD apply to Security Support Systems.
 
 The CA MUST define an inventory of Certificate Systems.
 
-#### 4.2 Vulnerability management timeframe
+#### 4.2 Intrusion Detection and Prevention
 
-The CA MUST establish a timeframe for responding to and remediating critical and non-critical vulnerabilities.
-This timeframe MUST be established based on a risk assessment performed by the CA.
+The CA MUST protect the inventory of Certificate Systems against common network and system threats using intrusion detection and prevention controls.
+
+Some common network and system threats include, but are not limited to:
+
+* malicious software;
+* phishing and social engineering;
+* denial of service;
+* unauthorized access; and
+* malicious data injection.
+
+#### 4.3 Vulnerability Correction Process
+
+The CA MUST document and follow a vulnerability correction process that includes:
+
+   1. identification;
+   1. review;
+   1. response; and
+   1. remediation.
+
+#### 4.4 Vulnerability Identification
+
+##### 4.4.1 Penetration Testing
+
+As part of the identification component of the CA's vulnerability correction process, the CA MUST define and follow a program for performing penetration tests that ensures:
+
+   1. penetration tests are performed:
+      * at least on an annual basis; and
+      * after infrastructure or application changes that are organizationally defined as significant; and
+   2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
+   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.3](#43-vulnerability-correction-process).
+
+#### 4.5 Vulnerability Management Timeframe
+
+The CA MUST establish one or more timeframes for reviewing, responding to, and remediating all identified vulnerabilities.
+
+Each timeframe MUST be established based on a risk assessment performed by the CA.
+
 The risk assessment MUST be based on a documented security analysis.
+
 The security analysis SHOULD take into account and address the following principles:
 
 * criticality of assets;
@@ -486,40 +522,6 @@ The security analysis SHOULD take into account and address the following princip
 * historical data; and
 * present threat landscape.
 
-The CA MUST ensure critical and non-critical vulnerabilities are responded to and remediated in accordance with their established timeframe.
+The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in accordance with their established timeframe(s).
 
-The CA MUST document in their Certificate Policy and/or Certification Practices Statement the timeframe established for responding to and remediating critical and non-critical vulnerabilities.
-
-#### 4.3 Intrusion Detection and Prevention
-
-Intrusion detection and prevention controls MUST protect the inventory of Certificate Systems against common network and system threats.
-
-Some common network and system threats include, but are not limited to:
-
-* malicious software;
-* phishing and social engineering;
-* denial of service;
-* unauthorized access; and
-* malicious data injection.
-
-#### 4.4 Vulnerability Correction
-
-The CA MUST document and follow a vulnerability correction process that includes:
-
-   1. periodic vulnerability scanning;
-   2. identification;
-   3. review;
-   4. response; and
-   5. remediation  (i.e. vulnerabilities are tracked to ensure their remediation is completed within a defined timeframe).
-
-#### 4.5 Penetration Testing
-
-The CA MUST define and follow a program for performing penetration tests.
-
-A defined program for performing penetration tests MUST ensure that:
-
-   1. penetration tests are performed:
-      * at least on an annual basis; and
-      * after infrastructure or application changes that are organizationally defined as significant; and
-   2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
-   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.4](#44-vulnerability-correction).
+The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
