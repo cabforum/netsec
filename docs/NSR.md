@@ -471,7 +471,7 @@ The CA MUST define an inventory of Certificate Systems.
 
 #### 4.2 Intrusion Detection and Prevention
 
-The CA MUST protect the inventory of Certificate Systems against common network and system threats using intrusion detection and prevention controls.
+The CA MUST protect the systems in the inventory of Certificate Systems against common network and system threats using intrusion detection and prevention controls.
 
 Some common network and system threats include, but are not limited to:
 
@@ -489,6 +489,11 @@ The CA MUST document and follow a vulnerability correction process that includes
    1. review;
    1. response; and
    1. remediation.
+
+A vulnerability is remediated when the CA has:
+
+* fixed the vulnerability such that the vulnerability is no longer present; or
+* confirmed the impact of the vulnerability and thoroughly documented why the vulnerability cannot be exploited.
 
 #### 4.4 Vulnerability Identification
 
@@ -514,7 +519,6 @@ The security analysis SHOULD take into account and address the following princip
 
 * criticality of assets;
 * maintaining confidentiality, integrity, and availability of assets;
-* risk tolerance;
 * regulatory requirements;
 * likelihood and impact of exploitation;
 * dependencies and interdependencies;
