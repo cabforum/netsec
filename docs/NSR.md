@@ -528,4 +528,4 @@ The security analysis SHOULD take into account and address the following princip
 
 The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in accordance with their established timeframe(s).
 
-The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
+Effective April 22, 2025, the CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
