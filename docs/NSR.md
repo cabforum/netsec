@@ -499,6 +499,8 @@ A vulnerability is remediated when the CA has:
 
 #### 4.4 Vulnerability Identification
 
+The CA's vulnerability identification process MUST include monitoring for relevant security advisories and penetration testing.
+
 ##### 4.4.1 Penetration Testing
 
 As part of the identification component of the CA's vulnerability correction process, the CA MUST define and follow a program for performing penetration tests that ensures:
