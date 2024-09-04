@@ -483,8 +483,6 @@ Some common network and system threats include, but are not limited to:
 
 #### 4.3 Vulnerability Correction Process
 
-The CA's vulnerability identification process MUST include monitoring for relevant security advisories and penetration testing.
-
 The CA MUST document and follow a vulnerability correction process that includes:
 
    1. identification;
@@ -495,7 +493,7 @@ The CA MUST document and follow a vulnerability correction process that includes
 A vulnerability is remediated when the CA has:
 
 * fixed the vulnerability such that the vulnerability is no longer present; or
-* confirmed the impact of the vulnerability and thoroughly documented why the vulnerability cannot be exploited.
+* confirmed the impact of the vulnerability and documented why the vulnerability does not impact the CA's security posture.
 
 #### 4.4 Vulnerability Identification
 
