@@ -103,6 +103,7 @@ The following are outcomes that this document seeks to achieve:
    1. something the user knows (knowledge factor);
    2. something the user has (possession factor); and
    3. something the user is (inherence factor).
+
 Each factor is independent of the other(s).
 
 **Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
@@ -172,7 +173,7 @@ Each factor is independent of the other(s).
 
 **Vulnerability Scan**: A process that uses manual or automated tools to probe internal and external systems to check and report on the status of operating systems, services, and devices exposed to the network and the presence of vulnerabilities listed in the NVD, OWASP Top Ten, or SANS Top 25.
 
-**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is capable of accessing CA Infrastructure and/or Network Equipment with elevated privileges.
+**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is capable of accessing CA Infrastructure and/or Network Equipment with elevated privileges compared to any given point on the general internet.
 
 ## Requirements
 
@@ -298,7 +299,9 @@ The CA MUST ensure personnel assigned to Trusted Roles that are authorized to ac
 
 ###### 2.2.1.2
 
-The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. When group accounts or shared role credentials are used, the CA MUST implement compensating controls, such as strict access control and auditing of system access.
+The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. When group accounts or shared role credentials are used, the CA MUST be able to attribute each use to
+    * an approved activity; and
+    * an individual user or service account.
 
 ###### 2.2.1.3
 
@@ -327,7 +330,7 @@ The CA MUST enforce the use of Multi-Factor Authentication for:
    1. accounts on CA Infrastructure; and
    2. access to CA Infrastructure.
 
-Authentication based on the possession of a certificate can be used as part of Multi-factor Authentication only if the associated Private Key is stored in a key storage device certified as:
+Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device certified as:
 
 * meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
 * validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
@@ -340,7 +343,7 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 
 The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
 
-The CA SHOULD NOT require periodic password changes with a period less than two (2) years.
+The CA SHALL NOT require periodic changes of passwords with a period less than two (2) years, except in such cases where the password should always be obtained from a credential manager or similar system for managing passwords.
 
 The CA MUST require that passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment or Workstations have a minimum of twelve (12) characters.
 
