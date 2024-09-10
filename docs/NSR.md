@@ -1,9 +1,9 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.0
+subtitle: Version 2.1
 author:
   - CA/Browser Forum
-date: 05 June, 2024
+date: 10 September, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -333,6 +333,7 @@ The CA MUST enforce the use of Multi-Factor Authentication for:
 Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device certified as:
 
 * meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
+* achieved FIDO2 certification at level 2 or higher; or
 * validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
 
 ##### 2.2.4
