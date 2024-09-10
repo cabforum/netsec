@@ -473,15 +473,7 @@ The CA MUST define an inventory of Certificate Systems.
 
 The CA MUST protect the systems in the inventory of Certificate Systems against common network and system threats using intrusion detection and prevention controls.
 
-Some common network and system threats include, but are not limited to:
-
-* malicious software;
-* phishing and social engineering;
-* denial of service;
-* unauthorized access; and
-* malicious data injection.
-
-#### 4.3 Vulnerability Correction Process
+#### 4.3 Vulnerability Management Lifecycle
 
 The CA MUST document and follow a vulnerability correction process that includes:
 
@@ -490,16 +482,11 @@ The CA MUST document and follow a vulnerability correction process that includes
    1. response; and
    1. remediation.
 
-A vulnerability is remediated when the CA has:
-
-* fixed the vulnerability such that the vulnerability is no longer present; or
-* confirmed the impact of the vulnerability and documented why the vulnerability does not impact the CA's security posture.
-
-#### 4.4 Vulnerability Identification
+##### 4.3.1 Vulnerability Identification
 
 The CA's vulnerability identification process MUST include monitoring for relevant security advisories and penetration testing.
 
-##### 4.4.1 Penetration Testing
+###### 4.3.1.1 Penetration Testing
 
 As part of the identification component of the CA's vulnerability correction process, the CA MUST define and follow a program for performing penetration tests that ensures:
 
@@ -507,17 +494,22 @@ As part of the identification component of the CA's vulnerability correction pro
       * at least on an annual basis; and
       * after infrastructure or application changes that are organizationally defined as significant; and
    2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
-   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.3](#43-vulnerability-correction-process).
+   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.3](#43-vulnerability-management-lifecycle).
 
-#### 4.5 Vulnerability Management Timeframe
+##### 4.3.2 Vulnerability Remediation
+
+A vulnerability is remediated when the CA has:
+
+* fixed the vulnerability such that the vulnerability is no longer present; or
+* confirmed the impact of the vulnerability and documented why the vulnerability does not impact the CA's security posture.
+
+#### 4.4 Vulnerability Management Timeframe
 
 The CA MUST establish one or more timeframes for reviewing, responding to, and remediating all identified vulnerabilities.
 
 Each timeframe MUST be established based on a risk assessment performed by the CA.
 
-The risk assessment MUST be based on a documented security analysis.
-
-The security analysis SHOULD take into account and address the following principles:
+The risk assessment MUST be based on a documented security analysis. The security analysis SHOULD take into account and address the following principles:
 
 * criticality of assets;
 * maintaining confidentiality, integrity, and availability of assets;
