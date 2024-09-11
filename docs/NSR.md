@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.1
 author:
   - CA/Browser Forum
-date: 10 September, 2024
+date: 11 September, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -218,10 +218,7 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
-
-   1. between CA Infrastructure components; and
-   2. between CA Infrastructure and non-CA Infrastructure under CA management.
+Connections to and within the CA Infrastructure MUST be authenticated and encrypted.
 
 CA Infrastructure and Network Equipment MUST be implemented and configured in a manner that minimizes unnecessary active components and capabilities such that:
 
@@ -330,11 +327,7 @@ The CA MUST enforce the use of Multi-Factor Authentication for:
    1. accounts on CA Infrastructure; and
    2. access to CA Infrastructure.
 
-Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device certified as:
-
-* meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
-* achieved FIDO2 certification at level 2 or higher; or
-* validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
+Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device that is designed to prevent extraction.
 
 ##### 2.2.4
 
@@ -343,10 +336,6 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 ##### 2.2.5
 
 The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
-
-The CA SHALL NOT require periodic changes of passwords with a period less than two (2) years, except in such cases where the password should always be obtained from a credential manager or similar system for managing passwords.
-
-The CA MUST require that passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment or Workstations have a minimum of twelve (12) characters.
 
 The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are programmatically generated and stored in a credential manager. Access to credentials stored in a credential manager MUST be limited to personnel based on the Principle of Least Privilege.
 
