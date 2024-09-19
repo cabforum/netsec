@@ -1,9 +1,9 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.1
+subtitle: Version 2.2
 author:
   - CA/Browser Forum
-date: 11 September, 2024
+date: 19 September, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -54,6 +54,7 @@ The following are outcomes that this document seeks to achieve:
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 2.0 | NS-003 | Restructure NCSSRs | 06-May-2024 | 05-Jun-2024 |
+| 2.2 | NS-005 | Cleanup and clarify some points of NCSSRs | | |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
@@ -335,9 +336,10 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 
 ##### 2.2.5
 
-The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
+The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Revision 3 Appendix A. Access to shared credentials MUST:
 
-The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are programmatically generated and stored in a credential manager. Access to credentials stored in a credential manager MUST be limited to personnel based on the Principle of Least Privilege.
+* be limited to personnel based on the Principle of Least Privilege; and
+* comply with section 2.2.1.2.
 
 ##### 2.2.6
 
