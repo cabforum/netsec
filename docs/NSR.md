@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2024-11-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-11-12, the CA SHALL adhere to these Requirements.
+Prior to 2025-04-22, the CA SHALL adhere to these Requirements or Version 2.0 of the Network and Certificate System Security Requirements. Effective 2025-04-22, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
@@ -522,4 +522,4 @@ The risk assessment MUST be based on a documented security analysis. The securit
 
 The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in accordance with their established timeframe(s).
 
-Effective April 22, 2025, the CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
+The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
