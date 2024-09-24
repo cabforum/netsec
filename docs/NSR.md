@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.2
 author:
   - CA/Browser Forum
-date: 19 September, 2024
+date: 25 September, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -54,7 +54,6 @@ The following are outcomes that this document seeks to achieve:
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 2.0 | NS-003 | Restructure NCSSRs | 06-May-2024 | 05-Jun-2024 |
-| 2.2 | NS-005 | Cleanup and clarify some points of NCSSRs | | |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
@@ -178,7 +177,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2024-11-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-11-12, the CA SHALL adhere to these Requirements.
+Prior to 2025-05-12, the CA SHALL adhere to these Requirements or Version 2.0 of the Network and Certificate System Security Requirements. Effective 2025-05-12, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
@@ -219,7 +218,7 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-Connections to and within the CA Infrastructure MUST be authenticated and encrypted.
+Connections to and within the CA Infrastructure MUST be authenticated and encrypted except OCSP and CRL.
 
 CA Infrastructure and Network Equipment MUST be implemented and configured in a manner that minimizes unnecessary active components and capabilities such that:
 
@@ -297,7 +296,7 @@ The CA MUST ensure personnel assigned to Trusted Roles that are authorized to ac
 
 ###### 2.2.1.2
 
-The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. When group accounts or shared role credentials are used, the CA MUST be able to attribute each use to
+The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. If group accounts or shared role credentials are used, the CA MUST be able to attribute each use to
     * an approved activity; and
     * an individual user or service account.
 
