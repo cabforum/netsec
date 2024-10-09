@@ -220,7 +220,9 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
+Connections to the CA Infrastructure MUST be authenticated and encrypted, except where documented that a formal specification prohibits or limits the use of authentication and/or encryption.
+
+Connections within the CA Infrastructure SHOULD be authenticated and encrypted.
 
    1. between CA Infrastructure components; and
    2. between CA Infrastructure and non-CA Infrastructure.
