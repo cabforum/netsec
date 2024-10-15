@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2025-04-22, the CA SHALL adhere to these Requirements or Version 2.0 of the Network and Certificate System Security Requirements. Effective 2025-04-22, the CA SHALL adhere to these Requirements.
+Effective 2025-04-29, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
