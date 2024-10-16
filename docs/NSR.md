@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0
 author:
   - CA/Browser Forum
-date: 05 June, 2024
+date: 23 Oct, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2024-11-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2024-11-12, the CA SHALL adhere to these Requirements.
+The CA SHALL adhere to these Requirements on or before 2025-03-12.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
@@ -220,7 +220,9 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
+Connections to the CA Infrastructure MUST be authenticated and encrypted, except where documented that a formal specification prohibits or limits the use of authentication and/or encryption.
+
+Connections within the CA Infrastructure SHOULD be authenticated and encrypted.
 
    1. between CA Infrastructure components; and
    2. between CA Infrastructure and non-CA Infrastructure.
