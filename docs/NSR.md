@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Effective 2025-04-29, the CA SHALL adhere to these Requirements.
+The CA SHALL adhere to these Requirements on or before 2025-04-29.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
