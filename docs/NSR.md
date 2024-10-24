@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0
 author:
   - CA/Browser Forum
-date: 05 June, 2024
+date: 24 October, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -84,11 +84,7 @@ The following are outcomes that this document seeks to achieve:
    8. generation and signing of authoritative certificate status; or
    9. key escrow.
 
-**Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/vuln-metrics/cvss>).
-
 **Critical Security Event**: An event, set of circumstances, or anomalous activity that could lead to a circumvention of CA Infrastructure security controls or compromise of CA Infrastructure integrity or operational continuity, including, but not limited to, excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or physical compromise of component integrity.
-
-**Critical Vulnerability**: A system vulnerability that has a CVSS v2.0 score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see <https://nvd.nist.gov/vuln-metrics/cvss>), or as otherwise designated as a Critical Vulnerability by the CA or the CA/Browser Forum.
 
 **Delegated Third Party**: A natural person or legal entity that is not the CA and that operates any part of a Certificate System.
 
@@ -107,13 +103,9 @@ Each factor is independent of the other(s).
 
 **Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
 
-**National Vulnerability Database (NVD)**: A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/>).
-
 **Network Equipment**: Hardware devices and other components that facilitate communication and data transfer within the CA Infrastructure.
 
 **OWASP Top Ten**: A list of application vulnerabilities published by the Open Web Application Security Project (see <https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project>).
-
-**Penetration Test**: A process that identifies and attempts to exploit openings and vulnerabilities on systems through the active use of known attack techniques, including the combination of different types of exploits, with a goal of breaking through layers of defenses and reporting on unpatched vulnerabilities and system weaknesses.
 
 **Physically Secure Environment**:  A controlled and protected physical space consisting minimally of a physical environment which is:
 
@@ -153,8 +145,6 @@ Each factor is independent of the other(s).
    2. store a Root CA Private Key; or
    3. create digital signatures using a Root CA Private Key.
 
-**SANS Top 25**: A list created with input from the SysAdmin, Audit, Network, and Security (SANS) Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see <http://www.sans.org/top25-software-errors/>).
-
 **Security Support System**: A system or set of systems supporting the security of the CA Infrastructure, which minimally includes:
 
    1. authentication;
@@ -170,8 +160,6 @@ Each factor is independent of the other(s).
 
 **Trusted Role**: An employee or contractor of a CA or Delegated Third Party who has authorized access to any component of CA Infrastructure.
 
-**Vulnerability Scan**: A process that uses manual or automated tools to probe internal and external systems to check and report on the status of operating systems, services, and devices exposed to the network and the presence of vulnerabilities listed in the NVD, OWASP Top Ten, or SANS Top 25.
-
 **Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is:
 
    1. connected to the same network as CA Infrastructure and/or Network Equipment; and
@@ -179,7 +167,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-The CA SHALL adhere to these Requirements on or before 2025-04-29.
+Prior to 2025-03-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2025-03-12, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
