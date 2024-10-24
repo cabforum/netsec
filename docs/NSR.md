@@ -105,8 +105,6 @@ Each factor is independent of the other(s).
 
 **Network Equipment**: Hardware devices and other components that facilitate communication and data transfer within the CA Infrastructure.
 
-**OWASP Top Ten**: A list of application vulnerabilities published by the Open Web Application Security Project (see <https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project>).
-
 **Physically Secure Environment**:  A controlled and protected physical space consisting minimally of a physical environment which is:
 
 1. protected by security controls which address the topics outlined in [section 4.5.1 of RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647#section-4.5.1); and
