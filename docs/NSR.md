@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0
 author:
   - CA/Browser Forum
-date: 23 Oct, 2024
+date: 28 Oct, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -179,7 +179,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-The CA SHALL adhere to these Requirements on or before 2025-03-12.
+Prior to 2025-03-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2025-03-12, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
 
