@@ -1,9 +1,9 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.0
+subtitle: Version 2.2
 author:
   - CA/Browser Forum
-date: 24 October, 2024
+date: 27 September, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -99,6 +99,7 @@ The following are outcomes that this document seeks to achieve:
    1. something the user knows (knowledge factor);
    2. something the user has (possession factor); and
    3. something the user is (inherence factor).
+
 Each factor is independent of the other(s).
 
 **Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
@@ -206,10 +207,7 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-CA Infrastructure and Network Equipment MUST be implemented and configured to authenticate and encrypt connections:
-
-   1. between CA Infrastructure components; and
-   2. between CA Infrastructure and non-CA Infrastructure.
+Connections to and within the CA Infrastructure MUST be authenticated and encrypted except OCSP and CRL.
 
 CA Infrastructure and Network Equipment MUST be implemented and configured in a manner that minimizes unnecessary active components and capabilities such that:
 
@@ -287,7 +285,9 @@ The CA MUST ensure personnel assigned to Trusted Roles that are authorized to ac
 
 ###### 2.2.1.2
 
-The CA MUST NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment.
+The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and/or Network Equipment. If group accounts or shared role credentials are used, the CA MUST be able to attribute each use to
+    * an approved activity; and
+    * an individual user or service account.
 
 ###### 2.2.1.3
 
@@ -307,11 +307,7 @@ The CA MUST ensure security measures are implemented that minimize the susceptib
 
 ##### 2.2.2
 
-The CA SHOULD ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
-
-The CA MAY allow a Workstation to remain active and unattended if the Workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time‐out or system lock.
-
-The CA MUST ensure personnel assigned to Trusted Roles log out of or lock their Workstation(s) when not in active use.
+The CA MUST ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
 
 ##### 2.2.3
 
@@ -320,10 +316,7 @@ The CA MUST enforce the use of Multi-Factor Authentication for:
    1. accounts on CA Infrastructure; and
    2. access to CA Infrastructure.
 
-Authentication based on the possession of a certificate can be used as part of Multi-factor Authentication only if the associated Private Key is stored in a key storage device certified as:
-
-* meeting at least FIPS 140-2 or 140-3, level 2 overall or level 3 physical; or
-* validated against a Common Criteria Protection Profile for Digital Signatures at EAL 4 augmented with AVA_VAN >=5 and ALC_FLR >= 2.
+Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device that is designed to prevent extraction.
 
 ##### 2.2.4
 
@@ -331,13 +324,10 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 
 ##### 2.2.5
 
-The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Appendix A.
+The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Equipment, or Workstations are generated and managed in accordance with NIST 800-63B Revision 3 Appendix A. Access to shared credentials MUST:
 
-The CA SHALL NOT require periodic password changes with a period less than two (2) years.
-
-The CA MUST ensure passwords used as authentication credentials for accounts on CA Infrastructure have a minimum of twelve (12) characters.
-
-The CA MUST ensure passwords used as authentication credentials for accounts on Network Equipment or Workstations have a minimum of eight (8) characters.
+* be limited to personnel based on the Principle of Least Privilege; and
+* comply with section 2.2.1.2.
 
 ##### 2.2.6
 
