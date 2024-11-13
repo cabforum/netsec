@@ -1,9 +1,9 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.2
+subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: 27 September, 2024
+date: 11 November, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -54,6 +54,7 @@ The following are outcomes that this document seeks to achieve:
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 2.0 | NS-003 | Restructure NCSSRs | 06-May-2024 | 05-Jun-2024 |
+| 2.0.1 | NS-005 | Clarifications to sections 1, 2 and a definition prior to NS-003 taking effect | 12-Oct-2024 | 11-Nov-2024 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
