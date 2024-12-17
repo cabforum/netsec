@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: 11 November, 2024
+date: 28 Oct, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -208,7 +208,12 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-Connections to and within the CA Infrastructure MUST be authenticated and encrypted except OCSP and CRL.
+Connections to the CA Infrastructure MUST be authenticated and encrypted, except where documented that a formal specification prohibits or limits the use of authentication and/or encryption.
+
+Connections within the CA Infrastructure SHOULD be authenticated and encrypted.
+
+   1. between CA Infrastructure components; and
+   2. between CA Infrastructure and non-CA Infrastructure.
 
 CA Infrastructure and Network Equipment MUST be implemented and configured in a manner that minimizes unnecessary active components and capabilities such that:
 
