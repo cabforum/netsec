@@ -96,7 +96,7 @@ Each factor is independent of the other(s).
 
 **Multi-Party Control**: An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted.
 
-**Network Equipment**: Hardware devices and components that facilitate communication and data transfer within the CA Infrastructure.
+**Network Equipment**: Hardware devices and other components that facilitate communication and data transfer within the CA Infrastructure.
 
 **Physically Secure Environment**:  A controlled and protected physical space consisting minimally of a physical environment which is:
 
@@ -151,7 +151,10 @@ Each factor is independent of the other(s).
 
 **Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any Certificate System or Root CA System.
 
-**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is capable of accessing CA Infrastructure and/or Network Equipment with elevated privileges compared to any given point on the general internet.
+**Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is:
+
+   1. connected to the same network as CA Infrastructure and/or Network Equipment; and
+   2. capable of accessing CA Infrastructure and/or Network Equipment.
 
 ## Requirements
 
