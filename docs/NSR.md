@@ -64,8 +64,9 @@ The following are outcomes that this document seeks to achieve:
 
 **CA Infrastructure**: Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a:
 
-* Certificate System; or
-* Root CA System (Air-Gapped and otherwise).
+* Certificate System;
+* Root CA System (Air-Gapped and otherwise); or
+* Security Support System.
 
 **Certificate System**: A system used by a CA or Delegated Third Party to access, process, or manage data or provide services related to performing:
 
@@ -135,9 +136,20 @@ Each factor is independent of the other(s).
    2. store a Root CA Private Key; or
    3. create digital signatures using a Root CA Private Key.
 
+**Security Support System**: The System(s) supporting the security of CA Infrastructure, performing functions such as:
+
+   #. authentication;
+   #. network boundary control;
+   #. audit logging;
+   #. audit log reduction and analysis;
+   #. vulnerability scanning;
+   #. physical intrusion detection;
+   #. host-based intrusion detection; and
+   #. network-based intrusion detection.
+
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
-**Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any component of CA Infrastructure.
+**Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any Certificate System or Root CA System.
 
 **Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is capable of accessing CA Infrastructure and/or Network Equipment with elevated privileges compared to any given point on the general internet.
 
@@ -146,6 +158,8 @@ Each factor is independent of the other(s).
 Prior to 2025-03-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2025-03-12, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Equipment Configuration
+
+The CA MUST define an inventory of Certificate Systems.
 
 #### 1.1 Network Segmentation
 
@@ -184,7 +198,7 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 ##### 1.2.2
 
-Connections to the CA Infrastructure MUST be authenticated and encrypted, except where documented that a formal specification prohibits or limits the use of authentication and/or encryption.
+Connections to the CA Infrastructure MUST be authenticated and encrypted, except where formal specification(s) prohibits or limits the use of authentication and/or encryption.
 
 Connections within the CA Infrastructure SHOULD be authenticated and encrypted.
 
@@ -415,15 +429,13 @@ The CA SHOULD ensure incident response plans minimally include:
 
 ### 4. Vulnerability Management
 
-The CA MUST implement the policies and procedures in this Section for identifying, evaluating, and resolving security vulnerabilities.
+#### 4.1
+
+The CA MUST implement the policies and procedures in [Section 4](#4-vulnerability-management) for identifying, evaluating, and resolving security vulnerabilities.
 
 These policies and procedures MUST apply to all Certificate Systems.
 
 These policies and procedures SHOULD apply to Security Support Systems.
-
-#### 4.1 Inventory of Certificate Systems
-
-The CA MUST define an inventory of Certificate Systems.
 
 #### 4.2 Intrusion Detection and Prevention
 
