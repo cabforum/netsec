@@ -1,9 +1,9 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.0.3
+subtitle: Version 2.0.4
 author:
   - CA/Browser Forum
-date: 13 December, 2024
+date: 11 March, 2025
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -57,6 +57,7 @@ The following are outcomes that this document seeks to achieve:
 | 2.0.1 | NS-005 | Clarifications to sections 1, 2 and a definition prior to NS-003 taking effect | 12-Oct-2024 | 11-Nov-2024 |
 | 2.0.2 | NS-004 | Updating Section 4 - Vulnerability Management - of the NCSSRs | 13-Nov-2024 | 13-Dec-2024 |
 | 2.0.3 | NS-006 | Fix 1.2.2 encrypted connections scoping | 13-Nov-2024 | 13-Dec-2024 |
+| 2.0.4 | NS-007 | Extend deadline to implement NSRv2 | 02-Feb-2025 | 07-Mar-2025 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
