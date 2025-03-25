@@ -5,7 +5,7 @@ author:
   - CA/Browser Forum
 date: {}
 copyright: |
-  Copyright 2024 CA/Browser Forum
+  Copyright 2025 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -49,7 +49,7 @@ The following are outcomes that this document seeks to achieve:
 | 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 09-Mar-18 |
 | 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
 | 1.3 | SC21 | The Network and Certificate Systems Security Requirements Section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
-| 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
+| 1.4 | SC29 | System Configuration Management | 7-May-2020 | 8-Jun-2020 |
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
@@ -174,7 +174,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 2025-03-12, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 2025-03-12, the CA SHALL adhere to these Requirements.
+Prior to 17-Sep-2025, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 17-Sep-2025, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Boundary Control Configuration
 
@@ -304,10 +304,10 @@ The CA MUST ensure personnel assigned to Trusted Roles that are authorized to ac
 
 The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and Network Boundary Controls.
 
-If group accounts or shared role credentials are used, the CA MUST be able to attribute each use to
+If group accounts or shared role credentials are used, the CA MUST be able to attribute each use to:
 
-* an approved activity; and
-* an individual user or service account.
+1. an approved activity; and
+2. an individual user or service account.
 
 ###### 2.2.1.3
 
@@ -467,7 +467,7 @@ These policies and procedures MUST apply to all Certificate Systems.
 
 These policies and procedures SHOULD apply to Security Support Systems.
 
-Effective April 15, 2026, these policies and procedures MUST apply to Security Support Systems.
+Effective 15-Apr-2026, these policies and procedures MUST apply to Security Support Systems.
 
 #### 4.2 Intrusion Detection and Prevention
 
