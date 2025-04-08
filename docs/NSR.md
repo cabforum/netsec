@@ -219,8 +219,6 @@ CA Infrastructure MUST be in a Physically Secure Environment.
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
-CA Infrastructure operated by a Delegated Third Party MUST be on physically separate networks from all other CA Infrastructure.
-
 ##### 1.2.2
 
 Connections to the CA Infrastructure MUST be authenticated and encrypted, except where a formal specification(s) prohibits or limits the use of authentication and/or encryption.
@@ -281,9 +279,8 @@ Each Trusted Role MUST have its responsibilities, privileges, and access documen
 
 Each Trusted Role MUST be assigned responsibilities, privileges, and access in a manner consistent with:
 
-1. the Principle of Least Privilege;
-2. the Principle of Separation of Duties; and
-3. any applicable requirements for Multi-Party Control.
+1. the Principle of Least Privilege; and
+2. the Principle of Separation of Duties.
 
 ##### 2.1.1
 
@@ -293,7 +290,7 @@ The CA MUST ensure personnel assigned to a Trusted Role act only within the scop
 
 ##### 2.2.1
 
-The CA MUST ensure access to CA Infrastructure and Network Boundary Controls is:
+The CA MUST ensure access to Certificate Systems and Root CA Systems is:
 
 1. limited to personnel assigned to applicable Trusted Roles; and
 2. based on the Principle of Least Privilege.
