@@ -55,6 +55,9 @@ The following are outcomes that this document seeks to achieve:
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 2.0 | NS-003 | Restructure NCSSRs | 06-May-2024 | 05-Jun-2024 |
 | 2.0.1 | NS-005 | Clarifications to sections 1, 2 and a definition prior to NS-003 taking effect | 12-Oct-2024 | 11-Nov-2024 |
+| 2.0.2 | NS-004 | Updating Section 4 - Vulnerability Management - of the NCSSRs | 13-Nov-2024 | 13-Dec-2024 |
+| 2.0.3 | NS-006 | Fix 1.2.2 encrypted connections scoping | 13-Nov-2024 | 13-Dec-2024 |
+| 2.0.4 | NS-007 | Extend deadline to implement NSRv2 | 02-Feb-2025 | 07-Mar-2025 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
@@ -115,7 +118,7 @@ Each factor is independent of the other(s).
 **Physically Secure Environment**:  A controlled and protected physical space consisting minimally of a physical environment which is:
 
 1. protected by security controls which address the topics outlined in [section 4.5.1 of RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647#section-4.5.1); and
-2. designed, built, and maintained in accordance with Risk Assessments conducted by the CA.
+2. operated in accordance with Risk Assessments conducted by the CA.
 
 **Principle of Least Privilege**: The principle that users, devices, and software should only have the minimum necessary access and privileges to complete their functions.
 
@@ -155,13 +158,12 @@ Each factor is independent of the other(s).
 **Security Support System**: The System(s) supporting the security of CA Infrastructure, performing functions such as:
 
    1. authentication;
-   2. network boundary control;
-   3. audit logging;
-   4. audit log reduction and analysis;
-   5. vulnerability scanning;
-   6. physical intrusion detection;
-   7. host-based intrusion detection; and
-   8. network-based intrusion detection.
+   2. audit logging;
+   3. audit log reduction and analysis;
+   4. vulnerability scanning;
+   5. physical intrusion detection;
+   6. host-based intrusion detection; and
+   7. network-based intrusion detection.
 
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
@@ -335,10 +337,7 @@ The CA MUST ensure Workstations are configured in a manner that prevents continu
 
 ##### 2.2.3
 
-The CA MUST enforce the use of Multi-Factor Authentication for:
-
-   1. accounts within CA Infrastructure; and
-   2. access to CA Infrastructure.
+The CA MUST enforce the use of Multi-Factor Authentication for access to CA Infrastructure.
 
 Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device that is designed to prevent extraction.
 
@@ -465,9 +464,9 @@ The CA MUST implement the policies and procedures in [Section 4](#4-vulnerabilit
 
 These policies and procedures MUST apply to all Certificate Systems.
 
-These policies and procedures SHOULD apply to Security Support Systems.
+These policies and procedures SHOULD apply to Security Support Systems and Network Boundary Controls.
 
-Effective 15-Apr-2026, these policies and procedures MUST apply to Security Support Systems.
+Effective 15-Apr-2026, these policies and procedures MUST apply to Security Support Systems and Network Boundary Controls.
 
 #### 4.2 Intrusion Detection and Prevention
 
