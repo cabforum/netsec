@@ -45,11 +45,11 @@ The following are outcomes that this document seeks to achieve:
 
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
 |-|-|-----|--|--|
-| 1.0 | 83 | Original Version Adopted | 3‐Aug‐12 | 01‐Jan‐13 |
-| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 09-Mar-18 |
-| 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
-| 1.3 | SC21 | The Network and Certificate Systems Security Requirements Section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
-| 1.4 | SC29 | System Configuration Management | 7-May-2020 | 8-Jun-2020 |
+| 1.0 | 83 | Original Version Adopted | 03‐Aug‐2012 | 01‐Jan‐2013 |
+| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐2017 | 09-Mar-2018 |
+| 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐2018 | 15-Sep-2018 |
+| 1.3 | SC21 | The Network and Certificate Systems Security Requirements Section 3 (Log Integrity Controls) | 26‐Sep‐2019 | 04-Nov-2019 |
+| 1.4 | SC29 | System Configuration Management | 07-May-2020 | 08-Jun-2020 |
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
@@ -455,8 +455,6 @@ The CA SHOULD ensure incident response plans minimally include:
 
 ### 4. Vulnerability Management
 
-#### 4.1
-
 The CA MUST implement the policies and procedures in [Section 4](#4-vulnerability-management) for identifying, evaluating, and resolving security vulnerabilities.
 
 These policies and procedures MUST apply to all Certificate Systems.
@@ -465,11 +463,11 @@ These policies and procedures SHOULD apply to Security Support Systems and Netwo
 
 Effective 15-Apr-2026, these policies and procedures MUST apply to Security Support Systems and Network Boundary Controls.
 
-#### 4.2 Intrusion Detection and Prevention
+#### 4.1 Intrusion Detection and Prevention
 
 The CA MUST protect the systems in the inventory of CA Infrastructure against common network and system threats using intrusion detection and prevention controls.
 
-#### 4.3 Vulnerability Management Lifecycle
+#### 4.2 Vulnerability Management Lifecycle
 
 The CA MUST document and follow a vulnerability correction process that includes:
 
@@ -478,11 +476,11 @@ The CA MUST document and follow a vulnerability correction process that includes
    1. response; and
    1. remediation.
 
-##### 4.3.1 Vulnerability Identification
+##### 4.2.1 Vulnerability Identification
 
 The CA's vulnerability identification process MUST include monitoring for relevant security advisories and penetration testing.
 
-###### 4.3.1.1 Penetration Testing
+###### 4.2.1.1 Penetration Testing
 
 As part of the identification component of the CA's vulnerability correction process, the CA MUST define and follow a program for performing penetration tests that ensures:
 
@@ -492,14 +490,14 @@ As part of the identification component of the CA's vulnerability correction pro
    2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
    3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.3](#43-vulnerability-management-lifecycle).
 
-##### 4.3.2 Vulnerability Remediation
+##### 4.2.2 Vulnerability Remediation
 
 A vulnerability is remediated when the CA has:
 
 * fixed the vulnerability such that the vulnerability is no longer present; or
 * confirmed the impact of the vulnerability and documented why the vulnerability does not impact the CA's security posture.
 
-#### 4.4 Vulnerability Management Timeframe
+#### 4.3 Vulnerability Management Timeframe
 
 The CA MUST establish one or more timeframes for reviewing, responding to, and remediating all identified vulnerabilities.
 
