@@ -488,7 +488,7 @@ As part of the identification component of the CA's vulnerability correction pro
       * at least on an annual basis; and
       * after infrastructure or application changes that are organizationally defined as significant; and
    2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
-   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.3](#43-vulnerability-management-lifecycle).
+   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.2](#42-vulnerability-management-lifecycle).
 
 ##### 4.2.2 Vulnerability Remediation
 
