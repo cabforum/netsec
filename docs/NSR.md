@@ -122,7 +122,7 @@ Each factor is independent of the other(s).
 
 **Principle of Least Privilege**: The principle that users, devices, and software should only have the minimum necessary access and privileges to complete their functions.
 
-**Principle of Separation of Duties**: The principle that critical tasks are divided among multiple individuals such that no single person has complete control over sensitive operations.
+**Principle of Separation of Duties**: The principle that tasks are divided among multiple individuals such that no single person has complete control over sensitive operations.
 
 **Private Key**: The cryptographic key of an asymmetric Key Pair that is kept secret by the holder of the Key Pair. It may be used to create digital signatures and/or to decrypt data that were encrypted by the corresponding Public Key.
 
