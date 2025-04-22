@@ -132,7 +132,7 @@ Each factor is independent of the other(s).
 
 **Risk Assessment**: A formal process that:
 
-   1. Identifies and documents foreseeable internal and external threats to the CA Infrastucture that could result in:
+   1. Identifies and documents foreseeable internal and external threats to the CA Infrastructure that could result in:
       * unauthorized access to the CA Infrastructure;
       * disclosure of data stored in the CA Infrastructure;
       * misuse of the CA Infrastructure; or
@@ -176,7 +176,7 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 17-Sep-2025, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 17-Sep-2025, the CA SHALL adhere to these Requirements.
+Prior to 12-Nov-2025, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 12-Nov-2025, the CA SHALL adhere to these Requirements.
 
 ### 1. CA Infrastructure and Network Boundary Control Configuration
 
