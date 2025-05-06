@@ -126,6 +126,8 @@ Each factor is independent of the other(s).
 
 **Private Key**: The cryptographic key of an asymmetric Key Pair that is kept secret by the holder of the Key Pair. It may be used to create digital signatures and/or to decrypt data that were encrypted by the corresponding Public Key.
 
+**Privileged Access**: Access to CA Infrastructure or Network Boundary Controls that provides capabilities or permissions enabling administration, configuration, management, or operation of such systems.
+
 **Public Key**: The cryptographic key of an asymmetric Key Pair that can be made public without compromising the security of the Key Pair. It may be used to verify digital signatures and/or to encrypt data that can be decrypted by the corresponding Private Key.
 
 **Requirements**: The Network and Certificate System Security Requirements found in this document.
@@ -172,7 +174,7 @@ Each factor is independent of the other(s).
 **Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is:
 
    1. connected to the same network as CA Infrastructure and/or a Network Boundary Control; and
-   2. capable of accessing CA Infrastructure and/or a Network Boundary Control.
+   2. capable of Privileged Access.
 
 ## Requirements
 
@@ -351,7 +353,7 @@ The CA SHOULD ensure passwords used as authentication credentials for accounts o
 
 ##### 2.2.6
 
-The CA MUST ensure any remote connection that enables administration of and/or access to CA Infrastructure:
+The CA MUST ensure any remote connection that enables Privileged Access to CA Infrastructure:
 
    1. originates from a Workstation owned and/or controlled by the CA;
    2. is made through a temporary, non‐persistent, and encrypted channel;
