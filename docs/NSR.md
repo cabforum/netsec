@@ -545,7 +545,6 @@ Systems which are not operated in a physical environment that is not controlled 
 1. Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported.
 2. Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
 
-
 ## 5.2 Vulnerability Detection and Patch Management
 
 Systems which are not operated in a physical environment that is not controlled by the CA MUST:
@@ -555,7 +554,6 @@ Systems which are not operated in a physical environment that is not controlled 
 3. Undergo or perform a Vulnerability Scan at least every three (3) months.
 4. Undergo a Penetration Test on at least an annual basis.
 5. Apply recommended security patches within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
-
 
 ## 5.3 System Hardening
 
