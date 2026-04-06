@@ -66,11 +66,13 @@ The following are outcomes that this document seeks to achieve:
 
 **Air-Gapped**:  Physically and logically separated, disconnected, and isolated from all other Systems.
 
+
 **CA Infrastructure**: Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a:
 
 * Certificate System;
-* Root CA System (Air-Gapped and otherwise); or
-* Security Support System.
+* Root CA System (Air-Gapped and otherwise);
+* Security Support System; or
+* Log Archive System.
 
 **Certificate System**: A system used by a CA or Delegated Third Party to store, access, process, or manage data or provide services related to performing:
 
@@ -103,6 +105,8 @@ These include, but are not limited to:
 **Delegated Third Party**: A natural person or legal entity that is not the CA and that operates any part of a Certificate System.
 
 **Key Pair**: The Private Key and its associated Public Key.
+
+**Log Archive System**: The System(s) supporting the archiving and retention of audit logs.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
@@ -217,6 +221,13 @@ Network segmentation MAY leverage software, such as:
 #### 1.2 CA Infrastructure Security
 
 ##### 1.2.1
+
+Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in a Physically Secure Environment.
+
+Log Archive Systems MUST either:
+
+1. be in a Physically Secure Environment, or
+2. be in a logical environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
 
 CA Infrastructure MUST be in a Physically Secure Environment.
 
@@ -520,3 +531,35 @@ The Risk Assessment MUST be based on a documented security analysis. The securit
 The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in accordance with their established timeframe(s).
 
 The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
+
+# 5. Requirements for Logical Environments
+
+The requirements of this section MUST be fulfilled for all Systems which are operated in a physical environment that is not controlled by the CA.
+
+In addition to the requirements outlined in this section, the CA SHOULD configure Systems in accordance with the documentation and guidance that is published by the operator of the logical environment.
+
+## 5.1 Facility & Service Provider Requirements
+
+Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+
+1. Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported.
+2. Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
+
+
+## 5.2 Vulnerability Detection and Patch Management
+
+Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+
+1. Implement intrusion detection and prevention controls to protect against common network and system threats.
+2. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities.
+3. Undergo or perform a Vulnerability Scan at least every three (3) months.
+4. Undergo a Penetration Test on at least an annual basis.
+5. Apply recommended security patches within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
+
+
+## 5.3 System Hardening
+
+Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+
+1. Disable all accounts, applications, services, protocols, and ports that are not used.
+2. Implement multi-factor authentication for all user accounts.
