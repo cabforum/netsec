@@ -72,7 +72,7 @@ The following are outcomes that this document seeks to achieve:
 * Certificate System;
 * Root CA System (Air-Gapped and otherwise);
 * Security Support System; or
-* Log Archive System.
+* Log Storage System.
 
 **Certificate System**: A system used by a CA or Delegated Third Party to store, access, process, or manage data or provide services related to performing:
 
@@ -106,7 +106,7 @@ These include, but are not limited to:
 
 **Key Pair**: The Private Key and its associated Public Key.
 
-**Log Archive System**: The System(s) supporting the archiving and retention of audit logs.
+**Log Storage System**: The System(s) supporting the archiving and retention of audit logs.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
@@ -224,9 +224,9 @@ Network segmentation MAY leverage software, such as:
 
 Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in a Physically Secure Environment.
 
-Log Archive Systems MUST either:
+Log Storage Systems MUST either:
 
-1. be in a Physically Secure Environment, or
+1. be in a Physically Secure Environment that is operated by the CA, or
 2. be in a logical environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
 
 CA Infrastructure MUST be in a Physically Secure Environment.
@@ -540,14 +540,14 @@ In addition to the requirements outlined in this section, the CA SHOULD configur
 
 ## 5.1 Facility & Service Provider Requirements
 
-Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a physical environment that is not controlled by the CA MUST:
 
 1. Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported.
 2. Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
 
 ## 5.2 Vulnerability Detection and Patch Management
 
-Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a physical environment that is not controlled by the CA MUST:
 
 1. Implement intrusion detection and prevention controls to protect against common network and system threats.
 2. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities.
@@ -557,7 +557,7 @@ Systems which are not operated in a physical environment that is not controlled 
 
 ## 5.3 System Hardening
 
-Systems which are not operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a physical environment that is not controlled by the CA MUST:
 
 1. Disable all accounts, applications, services, protocols, and ports that are not used.
 2. Implement multi-factor authentication for all user accounts.
