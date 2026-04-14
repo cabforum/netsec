@@ -229,8 +229,6 @@ Log Storage Systems MUST either:
 1. be in a Physically Secure Environment that is operated by the CA, or
 2. be in a logical environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
 
-CA Infrastructure MUST be in a Physically Secure Environment.
-
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
 ##### 1.2.2
