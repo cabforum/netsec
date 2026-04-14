@@ -230,7 +230,7 @@ Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Sup
 Log Storage Systems MUST either:
 
 1. be in a CA-Controlled Environment, or
-2. be in a Third Party-Controlled Environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
+2. be in a Third Party-Controlled Environment that fulfills the requirements of [Section 5](#5-requirements-for-third-party-controlled-environments).
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
