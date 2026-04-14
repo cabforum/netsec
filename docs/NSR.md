@@ -66,6 +66,7 @@ The following are outcomes that this document seeks to achieve:
 
 **Air-Gapped**:  Physically and logically separated, disconnected, and isolated from all other Systems.
 
+**CA-Controlled Environment:** A Physically Secure Environment where physical and operational control is managed by the Certificate Authority (the organization) and not delegated to a third-party service provider.
 
 **CA Infrastructure**: Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a:
 
@@ -174,6 +175,8 @@ Each factor is independent of the other(s).
 
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
+**Third Party-Controlled Environment:** A Physically Secure Environment where physical and operational control is not managed by the Certificate Authority (the organization) and is instead delegated to a third-party service provider.
+
 **Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any Certificate System or Root CA System.
 
 **Workstation**: A device, such as a phone, tablet, or desktop or laptop computer, which is:
@@ -222,12 +225,12 @@ Network segmentation MAY leverage software, such as:
 
 ##### 1.2.1
 
-Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in a Physically Secure Environment.
+Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in a CA-Controlled Environment.
 
 Log Storage Systems MUST either:
 
-1. be in a Physically Secure Environment that is operated by the CA, or
-2. be in a logical environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
+1. be in a CA-Controlled Environment, or
+2. be in a Third Party-Controlled Environment that fulfills the requirements of [Section 5](#5-requirements-for-logical-environments).
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
@@ -530,22 +533,22 @@ The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in
 
 The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
 
-# 5. Requirements for Logical Environments
+# 5. Requirements for Third Party-Controlled Environments
 
-The requirements of this section MUST be fulfilled for all Systems which are operated in a physical environment that is not controlled by the CA.
+The requirements of this section MUST be fulfilled for all Systems which are operated in a Third Party-Controlled Environment.
 
-In addition to the requirements outlined in this section, the CA SHOULD configure Systems in accordance with the documentation and guidance that is published by the operator of the logical environment.
+In addition to the requirements outlined in this section, the CA SHOULD configure Systems in accordance with the documentation and guidance that is published by the operator of the Third Party-Controlled Environment.
 
 ## 5.1 Facility & Service Provider Requirements
 
-Systems which are operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a Third Party-Controlled Environment MUST:
 
 1. Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported.
 2. Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
 
 ## 5.2 Vulnerability Detection and Patch Management
 
-Systems which are operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a Third Party-Controlled Environment MUST:
 
 1. Implement intrusion detection and prevention controls to protect against common network and system threats.
 2. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities.
@@ -555,6 +558,7 @@ Systems which are operated in a physical environment that is not controlled by t
 
 ## 5.3 System Hardening
 
+Systems which are operated in a Third Party-Controlled Environment MUST:
 Systems which are operated in a physical environment that is not controlled by the CA MUST:
 
 1. Disable all accounts, applications, services, protocols, and ports that are not used.
@@ -562,6 +566,6 @@ Systems which are operated in a physical environment that is not controlled by t
 
 ## 5.4 Data Integrity and Retention
 
-Systems which are operated in a physical environment that is not controlled by the CA MUST:
+Systems which are operated in a Third Party-Controlled Environment MUST:
 
 The logical environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
