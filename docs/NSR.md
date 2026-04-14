@@ -106,7 +106,7 @@ These include, but are not limited to:
 
 **Key Pair**: The Private Key and its associated Public Key.
 
-**Log Storage System**: The System(s) supporting the archiving and retention of audit logs.
+**Log Storage System**: The System(s) used for the long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Log Archive Systems, provided they cannot be used to restore the authoritative copy.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
