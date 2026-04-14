@@ -561,3 +561,9 @@ Systems which are operated in a physical environment that is not controlled by t
 
 1. Disable all accounts, applications, services, protocols, and ports that are not used.
 2. Implement multi-factor authentication for all user accounts.
+
+## 5.4 Data Integrity and Retention
+
+Systems which are operated in a physical environment that is not controlled by the CA MUST:
+
+The logical environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
