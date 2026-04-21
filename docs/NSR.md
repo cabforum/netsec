@@ -66,7 +66,7 @@ The following are outcomes that this document seeks to achieve:
 
 **Air-Gapped**:  Physically and logically separated, disconnected, and isolated from all other Systems.
 
-**CA-Controlled Environment:** A Physically Secure Environment where physical and operational control is managed by the Certificate Authority (the organization) and not delegated to a third-party service provider.
+**CA-Controlled Environment:** A Physically Secure Environment where physical and operational control is managed by the Certificate Authority (the organization) and not operated by a third-party service provider.
 
 **CA Infrastructure**: Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a:
 
@@ -107,7 +107,7 @@ These include, but are not limited to:
 
 **Key Pair**: The Private Key and its associated Public Key.
 
-**Log Storage System**: The System(s) used for the long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Log Archive Systems, provided they cannot be used to restore the authoritative copy.
+**Log Storage System**: The System(s) used for the long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Log Storage Systems, provided they cannot be used to restore the authoritative copy.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
@@ -175,7 +175,7 @@ Each factor is independent of the other(s).
 
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
-**Third Party-Controlled Environment:** A Physically Secure Environment where physical and operational control is not managed by the Certificate Authority (the organization) and is instead delegated to a third-party service provider.
+**Third Party-Controlled Environment:** A Physically Secure Environment where physical and operational control is not managed by the Certificate Authority (the organization) and is instead operated by a third-party service provider.
 
 **Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any Certificate System or Root CA System.
 
