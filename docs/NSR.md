@@ -553,6 +553,6 @@ The CA MUST perform a risk assessment of the service provider of the Third Party
 
 The CA MUST configure Systems in accordance with the documentation and guidance that is published by the operator of the Third Party-Controlled Environment. The CA MUST ensure that the configuration of such Systems meet the expectations published in the operator’s Shared Responsibility Model or other applicable documents. In addition, the CA MUST confirm that the configuration of such Systems aligns with the CA’s risk assessment.
 
-## 5.2 Data Integrity and Retention
+## 5.3 Data Integrity and Retention
 
 Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
