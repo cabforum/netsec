@@ -173,6 +173,8 @@ Each factor is independent of the other(s).
    6. host-based intrusion detection; and
    7. network-based intrusion detection.
 
+**Shared Responsibility Model:** A security framework in which a third-party service provider secures the underlying infrastructure, platforms, and services of the Third Party-Controlled Environment, while the customer is responsible for securing their data, configurations, and access controls within the Third Party-Controlled Environment.
+
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
 **Third Party-Controlled Environment:** A Physically Secure Environment where physical and operational control is not managed by the Certificate Authority (the organization) and is instead operated by a third-party service provider.
@@ -537,35 +539,20 @@ The CA MUST document in Section 6.7 of their Certificate Policy and/or Certifica
 
 The requirements of this section MUST be fulfilled for all Systems which are operated in a Third Party-Controlled Environment.
 
-In addition to the requirements outlined in this section, the CA SHOULD configure Systems in accordance with the documentation and guidance that is published by the operator of the Third Party-Controlled Environment.
+## 5.1 Risk Assessment
 
-## 5.1 Facility & Service Provider Requirements
+The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA SHOULD use a report that is independently audited and certified. The risk assessment SHOULD cover: 
 
-Systems which are operated in a Third Party-Controlled Environment MUST:
+1. Vulnerability Detection
+2. Patch Management
+3. System Hardening
+4. Network Hardening
+5. Physical Security
 
-1. Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported.
-2. Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
+## 5.2 Shared Responsibility
 
-## 5.2 Vulnerability Detection and Patch Management
+The CA MUST configure Systems in accordance with the documentation and guidance that is published by the operator of the Third Party-Controlled Environment. The CA MUST ensure that the configuration of such Systems meet the expectations published in the operator’s Shared Responsibility Model or other applicable documents. In addition, the CA MUST confirm that the configuration of such Systems aligns with the CA’s risk assessment.
 
-Systems which are operated in a Third Party-Controlled Environment MUST:
+## 5.2 Data Integrity and Retention
 
-1. Implement intrusion detection and prevention controls to protect against common network and system threats.
-2. Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities.
-3. Undergo or perform a Vulnerability Scan at least every three (3) months.
-4. Undergo a Penetration Test on at least an annual basis.
-5. Apply recommended security patches within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
-
-## 5.3 System Hardening
-
-Systems which are operated in a Third Party-Controlled Environment MUST:
-Systems which are operated in a physical environment that is not controlled by the CA MUST:
-
-1. Disable all accounts, applications, services, protocols, and ports that are not used.
-2. Implement multi-factor authentication for all user accounts.
-
-## 5.4 Data Integrity and Retention
-
-Systems which are operated in a Third Party-Controlled Environment MUST:
-
-The logical environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
+Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
