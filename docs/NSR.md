@@ -551,7 +551,7 @@ The CA MUST perform a risk assessment of the service provider of the Third Party
 
 ## 5.2 Shared Responsibility
 
-The CA MUST configure Systems in accordance with the documentation, guidance, and shared-responsibility model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
+The CA MUST configure Systems in accordance with the documentation, guidance, and Shared Responsibility Model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
 
 ## 5.3 Data Integrity and Retention
 
