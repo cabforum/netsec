@@ -541,7 +541,7 @@ The requirements of this section MUST be fulfilled for all Systems which are ope
 
 ## 5.1 Risk Assessment
 
-The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA SHOULD use a report that is independently audited and certified. The risk assessment SHOULD cover: 
+The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA MUST document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports. The risk assessment SHOULD cover: 
 
 1. Vulnerability Detection
 2. Patch Management
@@ -551,8 +551,10 @@ The CA MUST perform a risk assessment of the service provider of the Third Party
 
 ## 5.2 Shared Responsibility
 
-The CA MUST configure Systems in accordance with the documentation and guidance that is published by the operator of the Third Party-Controlled Environment. The CA MUST ensure that the configuration of such Systems meet the expectations published in the operator’s Shared Responsibility Model or other applicable documents. In addition, the CA MUST confirm that the configuration of such Systems aligns with the CA’s risk assessment.
+The CA MUST configure Systems in accordance with the documentation, guidance, and shared-responsibility model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
 
 ## 5.3 Data Integrity and Retention
 
 Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
+
+The CA MUST verify, at least annually, that the immutability and retention configuration remains effective and that audit logs can be retrieved for the required retention period.
