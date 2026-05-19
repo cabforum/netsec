@@ -66,11 +66,20 @@ The following are outcomes that this document seeks to achieve:
 
 **Air-Gapped**:  Physically and logically separated, disconnected, and isolated from all other Systems.
 
+**CA-Colocated Environment**: A Physically Secure Environment in which:
+
+   1. the CA operates its own Systems within a facility managed by a third-party service provider;
+   2. the CA maintains direct physical control over its designated space (e.g., dedicated rack, cage, or suite) and the Systems within that space; and
+   3. the third-party service provider manages facility-level controls such as building perimeter security, physical access systems, power, environmental controls (e.g., HVAC), and fire suppression.
+
+**CA-Controlled Environment:**: A Physically Secure Environment where all physical and operational controls are exclusively managed by the Certificate Authority (the organization), including facility-level controls such as building perimeter security, physical access systems, power, environmental controls (e.g., HVAC), and fire suppression. No portion of the Physically Secure Environment's physical or environmental controls is operated by a third-party service provider.
+
 **CA Infrastructure**: Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a:
 
 * Certificate System;
-* Root CA System (Air-Gapped and otherwise); or
-* Security Support System.
+* Root CA System (Air-Gapped and otherwise);
+* Security Support System; or
+* Logging System.
 
 **Certificate System**: A system used by a CA or Delegated Third Party to store, access, process, or manage data or provide services related to performing:
 
@@ -103,6 +112,8 @@ These include, but are not limited to:
 **Delegated Third Party**: A natural person or legal entity that is not the CA and that operates any part of a Certificate System.
 
 **Key Pair**: The Private Key and its associated Public Key.
+
+**Logging System**: The System(s) used for the reduction, analysis, and long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Logging Systems, provided they cannot be used to restore the authoritative copy.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
@@ -161,14 +172,23 @@ Each factor is independent of the other(s).
 **Security Support System**: The System(s) supporting the security of CA Infrastructure, performing functions such as:
 
    1. authentication;
-   2. audit logging;
-   3. audit log reduction and analysis;
-   4. vulnerability scanning;
-   5. physical intrusion detection;
-   6. host-based intrusion detection; and
-   7. network-based intrusion detection.
+   2. generation and collection of audit logs;
+   3. vulnerability scanning;
+   4. physical intrusion detection;
+   5. host-based intrusion detection; and
+   6. network-based intrusion detection.
+
+   The following activities are governed by the Logging System definition:
+
+   1. audit log reduction;
+   2. audit log analysis; and
+   3. long-term, authoritative retention of audit logs.
+
+**Shared Responsibility Model:** A security framework in which a third-party service provider secures the underlying infrastructure, platforms, and services of the Third Party-Controlled Environment, while the customer is responsible for securing their data, configurations, and access controls within the Third Party-Controlled Environment.
 
 **System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
+
+**Third Party-Controlled Environment:** A Physically Secure Environment where all physical and operational controls are managed by a third-party service provider. The CA does not maintain direct physical access to, or physical control over, the underlying hardware or the facility in which it operates.
 
 **Trusted Role**: An individual employee or contractor of a CA or Delegated Third Party who has authorized access to any Certificate System or Root CA System.
 
@@ -218,7 +238,16 @@ Network segmentation MAY leverage software, such as:
 
 ##### 1.2.1
 
-CA Infrastructure MUST be in a Physically Secure Environment.
+Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in:
+
+   1. a CA-Controlled Environment; or
+   2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments).
+
+Logging Systems MUST be in:
+
+   1. a CA-Controlled Environment;
+   2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments); or
+   3. a Third Party-Controlled Environment that fulfills the requirements of [Section 6](#6-requirements-for-third-party-controlled-environments).
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
@@ -520,3 +549,70 @@ The Risk Assessment MUST be based on a documented security analysis. The securit
 The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in accordance with their established timeframe(s).
 
 The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
+
+# 5. Requirements for CA-Colocated Environments
+
+The requirements of this section MUST be fulfilled for all Systems which are operated in a CA-Colocated Environment.
+
+## 5.1 Service Agreement
+
+The CA MUST maintain a documented service agreement with the operator of the CA-Colocated Environment that addresses:
+
+1. the facility-level physical security controls provided by the third-party service provider, including, at minimum, controls addressing the topics outlined in Section 4.5.1 of RFC 3647;
+2. the delineation of responsibilities between the CA and the third-party service provider for each aspect of physical and environmental security;
+3. the CA's right to audit or obtain independent audit reports covering the third-party service provider's facility-level controls;
+4. incident notification requirements, including timelines for the third-party service provider to notify the CA of physical security incidents that may affect the CA's designated space; and
+5. the conditions and procedures under which the third-party service provider may access the CA's designated space.
+
+## 5.2 Risk Assessment
+
+The CA MUST perform a risk assessment of the third-party service provider operating the CA-Colocated Environment. The risk assessment MUST:
+
+1. evaluate the adequacy of the third-party service provider's facility-level physical and environmental security controls;
+2. be performed prior to initial use and reviewed at least annually thereafter; and
+3. document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports (e.g., SOC 2 Type II, ISO/IEC 27001).
+
+## 5.3 Physical Access Controls
+
+The CA MUST ensure that:
+
+1. the CA's designated space within the CA-Colocated Environment is physically separated from spaces controlled by other tenants through mechanisms such as locked cages, locked cabinets, or dedicated suites;
+2. physical access to the CA's designated space is restricted to personnel assigned to applicable Trusted Roles;
+3. the CA maintains independent control over the access credentials (e.g., keys, locks, access cards, biometric enrollment) for its designated space; and
+4. the third-party service provider's access to the CA's designated space, if any, is:
+   a. governed by documented procedures that are consistent with the CA's physical access policies;
+   b. escorted by, or conducted with the prior authorization and knowledge of, personnel assigned to applicable Trusted Roles; and
+   c. logged and reviewed by the CA.
+
+Where Root CA Systems are housed in a CA-Colocated Environment, the CA MUST additionally ensure that the third-party service provider cannot independently access the CA's designated space without the presence of personnel assigned to applicable Trusted Roles.
+
+## 5.4 Monitoring and Verification
+
+The CA MUST:
+
+1. verify, at least annually, that the third-party service provider's facility-level controls continue to satisfy the CA's risk assessment; and
+2. review physical access logs for the CA's designated space at least quarterly.
+
+# 6. Requirements for Third Party-Controlled Environments
+
+The requirements of this section MUST be fulfilled for all Systems which are operated in a Third Party-Controlled Environment.
+
+## 6.1 Risk Assessment
+
+The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA MUST document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports. The risk assessment SHOULD cover: 
+
+1. Vulnerability Detection
+2. Patch Management
+3. System Hardening
+4. Network Hardening
+5. Physical Security
+
+## 6.2 Shared Responsibility
+
+The CA MUST configure Systems in accordance with the documentation, guidance, and Shared Responsibility Model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
+
+## 6.3 Data Integrity and Retention
+
+Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
+
+The CA MUST verify, at least annually, that the immutability and retention configuration remains effective and that audit logs can be retrieved for the required retention period.
