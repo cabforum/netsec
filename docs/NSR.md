@@ -79,7 +79,7 @@ The following are outcomes that this document seeks to achieve:
 * Certificate System;
 * Root CA System (Air-Gapped and otherwise);
 * Security Support System; or
-* Log Storage System.
+* Logging System.
 
 **Certificate System**: A system used by a CA or Delegated Third Party to store, access, process, or manage data or provide services related to performing:
 
@@ -113,7 +113,7 @@ These include, but are not limited to:
 
 **Key Pair**: The Private Key and its associated Public Key.
 
-**Log Storage System**: The System(s) used for the long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Log Storage Systems, provided they cannot be used to restore the authoritative copy.
+**Logging System**: The System(s) used for the reduction, analysis, and long-term, authoritative retention of audit logs. This definition includes any backup or recovery system whose data is intended to be used to restore or replace the authoritative copy. Copies of logs used for transient purposes (such as debugging or temporary analysis) are not considered Logging Systems, provided they cannot be used to restore the authoritative copy.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction:
 
@@ -173,13 +173,16 @@ Each factor is independent of the other(s).
 
    1. authentication;
    2. generation and collection of audit logs;
-   3. audit log reduction and analysis;
-   4. vulnerability scanning;
-   5. physical intrusion detection;
-   6. host-based intrusion detection; and
-   7. network-based intrusion detection.
+   3. vulnerability scanning;
+   4. physical intrusion detection;
+   5. host-based intrusion detection; and
+   6. network-based intrusion detection.
 
-   The long-term, authoritative retention of audit logs is governed by the Log Storage System definition.
+   The following activities are governed by the Logging System definition:
+
+   1. audit log reduction;
+   2. audit log analysis; and
+   3. long-term, authoritative retention of audit logs.
 
 **Shared Responsibility Model:** A security framework in which a third-party service provider secures the underlying infrastructure, platforms, and services of the Third Party-Controlled Environment, while the customer is responsible for securing their data, configurations, and access controls within the Third Party-Controlled Environment.
 
@@ -240,7 +243,7 @@ Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Sup
    1. a CA-Controlled Environment; or
    2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments).
 
-Log Storage Systems MUST be in:
+Logging Systems MUST be in:
 
    1. a CA-Controlled Environment;
    2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments); or
