@@ -238,13 +238,13 @@ Network segmentation MAY leverage software, such as:
 Certificate Systems, Root CA Systems (Air-gapped or otherwise), and Security Support Systems MUST be in:
 
    1. a CA-Controlled Environment; or
-   2. a CA-Colocated Environment that fulfills the requirements of Section 6.
+   2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments).
 
 Log Storage Systems MUST be in:
 
    1. a CA-Controlled Environment;
-   2. a CA-Colocated Environment that fulfills the requirements of Section 6; or
-   3. a Third Party-Controlled Environment that fulfills the requirements of Section 5.
+   2. a CA-Colocated Environment that fulfills the requirements of [Section 5](#5-requirements-for-ca-colocated-environments); or
+   3. a Third Party-Controlled Environment that fulfills the requirements of [Section 6](#6-requirements-for-third-party-controlled-environments).
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
@@ -547,35 +547,11 @@ The CA MUST ensure vulnerabilities are reviewed, responded to, and remediated in
 
 The CA MUST document in Section 6.7 of their Certificate Policy and/or Certification Practices Statement each timeframe established for responding to and remediating vulnerabilities.
 
-# 5. Requirements for Third Party-Controlled Environments
-
-The requirements of this section MUST be fulfilled for all Systems which are operated in a Third Party-Controlled Environment.
-
-## 5.1 Risk Assessment
-
-The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA MUST document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports. The risk assessment SHOULD cover: 
-
-1. Vulnerability Detection
-2. Patch Management
-3. System Hardening
-4. Network Hardening
-5. Physical Security
-
-## 5.2 Shared Responsibility
-
-The CA MUST configure Systems in accordance with the documentation, guidance, and Shared Responsibility Model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
-
-## 5.3 Data Integrity and Retention
-
-Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
-
-The CA MUST verify, at least annually, that the immutability and retention configuration remains effective and that audit logs can be retrieved for the required retention period.
-
-# 6. Requirements for CA-Colocated Environments
+# 5. Requirements for CA-Colocated Environments
 
 The requirements of this section MUST be fulfilled for all Systems which are operated in a CA-Colocated Environment.
 
-## 6.1 Service Agreement
+## 5.1 Service Agreement
 
 The CA MUST maintain a documented service agreement with the operator of the CA-Colocated Environment that addresses:
 
@@ -585,7 +561,7 @@ The CA MUST maintain a documented service agreement with the operator of the CA-
 4. incident notification requirements, including timelines for the third-party service provider to notify the CA of physical security incidents that may affect the CA's designated space; and
 5. the conditions and procedures under which the third-party service provider may access the CA's designated space.
 
-## 6.2 Risk Assessment
+## 5.2 Risk Assessment
 
 The CA MUST perform a risk assessment of the third-party service provider operating the CA-Colocated Environment. The risk assessment MUST:
 
@@ -593,7 +569,7 @@ The CA MUST perform a risk assessment of the third-party service provider operat
 2. be performed prior to initial use and reviewed at least annually thereafter; and
 3. document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports (e.g., SOC 2 Type II, ISO/IEC 27001).
 
-## 6.3 Physical Access Controls
+## 5.3 Physical Access Controls
 
 The CA MUST ensure that:
 
@@ -607,9 +583,33 @@ The CA MUST ensure that:
 
 Where Root CA Systems are housed in a CA-Colocated Environment, the CA MUST additionally ensure that the third-party service provider cannot independently access the CA's designated space without the presence of personnel assigned to applicable Trusted Roles.
 
-## 6.4 Monitoring and Verification
+## 5.4 Monitoring and Verification
 
 The CA MUST:
 
 1. verify, at least annually, that the third-party service provider's facility-level controls continue to satisfy the CA's risk assessment; and
 2. review physical access logs for the CA's designated space at least quarterly.
+
+# 6. Requirements for Third Party-Controlled Environments
+
+The requirements of this section MUST be fulfilled for all Systems which are operated in a Third Party-Controlled Environment.
+
+## 6.1 Risk Assessment
+
+The CA MUST perform a risk assessment of the service provider of the Third Party-Controlled Environment. The risk assessment MUST cover topics applicable to the services being used and MUST cover the CA’s considerations and criteria. The CA MUST document the evidence relied upon in performing the risk assessment, which MAY include independently audited or certified reports. The risk assessment SHOULD cover: 
+
+1. Vulnerability Detection
+2. Patch Management
+3. System Hardening
+4. Network Hardening
+5. Physical Security
+
+## 6.2 Shared Responsibility
+
+The CA MUST configure Systems in accordance with the documentation, guidance, and Shared Responsibility Model published by the operator of the Third Party-Controlled Environment. The CA MUST document how its configuration satisfies the responsibilities allocated to the CA and aligns with the CA’s risk assessment.
+
+## 6.3 Data Integrity and Retention
+
+Systems which are operated in a Third Party-Controlled Environment MUST be configured to prevent the modification or deletion of logs for their entire required retention period. This MUST be implemented using provider-native immutability features, such as WORM (Write-Once-Read-Many) or Object Locks.
+
+The CA MUST verify, at least annually, that the immutability and retention configuration remains effective and that audit logs can be retrieved for the required retention period.
