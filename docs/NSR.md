@@ -347,7 +347,7 @@ The CA MUST enforce the use of Multi-Party Control for physical access to any Ro
 
 ##### 2.2.5
 
-The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Boundary Controls, or Workstations are generated and managed in accordance with NIST 800-63B Revision 3 Appendix A. Access to shared credentials MUST:
+The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Boundary Controls, or Workstations are generated and managed in accordance with [https://csrc.nist.gov/pubs/sp/800/63/B/4/final](NIST 800-63B Revision 4 Appendix A). Access to shared credentials MUST:
 
 * be limited to personnel based on the Principle of Least Privilege; and
 * comply with section 2.2.1.2.
