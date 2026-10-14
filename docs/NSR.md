@@ -1,11 +1,11 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 2.0.5
+subtitle: Version 2.0.6
 author:
   - CA/Browser Forum
-date: 09 July 2025
+date: 14 October 2026
 copyright: |
-  Copyright 2025 CA/Browser Forum
+  Copyright 2026 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -59,6 +59,7 @@ The following are outcomes that this document seeks to achieve:
 | 2.0.3 | NS-006 | Fix 1.2.2 encrypted connections scoping | 13-Nov-2024 | 13-Dec-2024 |
 | 2.0.4 | NS-007 | Extend deadline to implement NSRv2 | 02-Feb-2025 | 07-Mar-2025 |
 | 2.0.5 | NS-008 | Updates to CA Infrastructure Scope, Trusted Roles, Systems' Applicability, and various other improvements | 03-Jun-2025 | 03-Jul-2025 |
+| 2.0.6 | NS-010 | Introduce section for CA Infrastructure Inventory and renumber subsequent sections, remove expired effective dates, and update NIST SP 800-63B reference | 14-Oct-2026 | 13-Nov-2026 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
@@ -179,19 +180,19 @@ Each factor is independent of the other(s).
 
 ## Requirements
 
-Prior to 12-Nov-2025, the CA SHALL adhere to these Requirements or Version 1.7 of the Network and Certificate System Security Requirements. Effective 12-Nov-2025, the CA SHALL adhere to these Requirements.
-
-### 1. CA Infrastructure and Network Boundary Control Configuration
+### 1. CA Infrastructure Inventory
 
 The CA MUST define an inventory of its CA Infrastructure.
 
-#### 1.1 Network Segmentation
+### 2. CA Infrastructure and Network Boundary Control Configuration
 
-##### 1.1.1
+#### 2.1 Network Segmentation
+
+##### 2.1.1
 
 CA Infrastructure MUST be segmented into separate networks based on the functional and/or logical relationships of CA Infrastructure components.
 
-###### 1.1.1.1
+###### 2.1.1.1
 
 Network segmentation SHOULD be designed and implemented in a manner that:
 
@@ -200,7 +201,7 @@ Network segmentation SHOULD be designed and implemented in a manner that:
 3. restricts traffic flow between different network segments; and
 4. protects all CA Infrastructure components from unauthorized access.
 
-###### 1.1.1.2
+###### 2.1.1.2
 
 Network segmentation MUST be designed and implemented using Network Boundary Controls, such as:
 
@@ -214,15 +215,15 @@ Network segmentation MAY leverage software, such as:
 * virtual local area networks (VLANs) and VLAN access control lists
 * virtual private networks (VPNs)
 
-#### 1.2 CA Infrastructure Security
+#### 2.2 CA Infrastructure Security
 
-##### 1.2.1
+##### 2.2.1
 
 CA Infrastructure MUST be in a Physically Secure Environment.
 
 Root CA Systems MUST be on physically separate networks from all other CA Infrastructure.
 
-##### 1.2.2
+##### 2.2.2
 
 Connections to the CA Infrastructure MUST be authenticated and encrypted, except where a formal specification(s) prohibits or limits the use of authentication and/or encryption.
 
@@ -233,11 +234,11 @@ CA Infrastructure and Network Boundary Controls MUST be implemented and configur
    1. all connections, communications, applications, services, protocols, and ports not used are removed and/or disabled; and
    2. only connections, communications, applications, services, protocols, and ports necessary and approved under the Principle of Least Privilege are enabled.
 
-##### 1.2.3
+##### 2.2.3
 
 Equivalent security MUST be implemented on all Systems on the same network as any CA Infrastructure component.
 
-#### 1.3 Change Management
+#### 2.3 Change Management
 
 The CA MUST establish and maintain a change management process which is minimally:
 
@@ -270,11 +271,11 @@ The CA MUST ensure that all changes are completed in accordance with such a chan
    3. Network Boundary Controls; and
    4. CA Infrastructure.
 
-### 2. Access Control
+### 3. Access Control
 
-Within this Section 2, references to "access" include all physical and logical access, unless otherwise specified.
+Within this Section 3, references to "access" include all physical and logical access, unless otherwise specified.
 
-#### 2.1 Trusted roles
+#### 3.1 Trusted roles
 
 The CA MUST define Trusted Roles for the personnel who design, build, develop, implement, operate, and maintain its Certificate Systems and Root CA Systems.
 
@@ -285,24 +286,24 @@ Each Trusted Role MUST be assigned responsibilities, privileges, and access in a
 1. the Principle of Least Privilege; and
 2. the Principle of Separation of Duties.
 
-##### 2.1.1
+##### 3.1.1
 
 The CA MUST ensure personnel assigned to a Trusted Role act only within the scope of their Trusted Role(s) when performing responsibilities, using privileges, or using access assigned to that Trusted Role.
 
-#### 2.2 Access Management
+#### 3.2 Access Management
 
-##### 2.2.1
+##### 3.2.1
 
 The CA MUST ensure access to Certificate Systems and Root CA Systems is:
 
 1. limited to personnel assigned to applicable Trusted Roles; and
 2. based on the Principle of Least Privilege.
 
-###### 2.2.1.1
+###### 3.2.1.1
 
 The CA MUST ensure personnel assigned to Trusted Roles that are authorized to access or authenticate to Certificate Systems or Root CA Systems use unique authentication credentials created by or assigned to the authorized individual.
 
-###### 2.2.1.2
+###### 3.2.1.2
 
 The CA SHOULD NOT allow group accounts or shared role credentials to authenticate to or access CA Infrastructure and Network Boundary Controls.
 
@@ -311,19 +312,19 @@ If group accounts or shared role credentials are used, the CA MUST be able to at
 1. an approved activity; and
 2. an individual user or service account.
 
-###### 2.2.1.3
+###### 3.2.1.3
 
 The CA MUST ensure authentication credentials are changed or revoked when associated authorizations are changed or revoked.
 
 The CA MUST ensure access to CA Infrastructure and Network Boundary Controls is disabled for personnel within twenty-four (24) hours of the termination of an individual's employment or contracting relationship.
 
-###### 2.2.1.4
+###### 3.2.1.4
 
 The CA MUST ensure any account capable of authenticating to or accessing CA Infrastructure or Network Boundary Controls is reviewed at a minimum frequency of every three (3) months.
 
 The CA MUST ensure any account that is not necessary for the operation of CA Infrastructure or Network Boundary Controls is deactivated or removed such that the account is no longer capable of authenticating to or accessing CA Infrastructure or Network Boundary Controls.
 
-###### 2.2.1.5
+###### 3.2.1.5
 
 The CA MUST ensure security measures are implemented that minimize the susceptibility of CA Infrastructure and Network Boundary Controls to unauthorized access through repeated attempts to authenticate to or access an account that has access to CA Infrastructure or Network Boundary Controls.
 
@@ -331,28 +332,28 @@ These measures SHOULD prevent brute-force attacks which systematically enumerate
 
 These measures SHOULD be based on a Risk Assessment.
 
-##### 2.2.2
+##### 3.2.2
 
 The CA MUST ensure Workstations are configured in a manner that prevents continued access to the Workstation after a set period of inactivity, for example by automatically logging off active users. The allowed and configured duration of inactivity MUST be selected based on the CA's assessment of associated risks.
 
-##### 2.2.3
+##### 3.2.3
 
 The CA MUST enforce the use of Multi-Factor Authentication for access to CA Infrastructure.
 
 Authentication based on the possession of a cryptographic key can be used as part of Multi-factor Authentication only if that key is stored in a key storage device that is designed to prevent extraction.
 
-##### 2.2.4
+##### 3.2.4
 
 The CA MUST enforce the use of Multi-Party Control for physical access to any Root CA System.
 
-##### 2.2.5
+##### 3.2.5
 
-The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Boundary Controls, or Workstations are generated and managed in accordance with NIST 800-63B Revision 3 Appendix A. Access to shared credentials MUST:
+The CA SHOULD ensure passwords used as authentication credentials for accounts on CA Infrastructure, Network Boundary Controls, or Workstations are generated and managed in accordance with [NIST SP 800-63B Revision 4 Section A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63B-4.pdf). Access to shared credentials MUST:
 
 * be limited to personnel based on the Principle of Least Privilege; and
-* comply with section 2.2.1.2.
+* comply with [Section 3.2.1.2](#3212).
 
-##### 2.2.6
+##### 3.2.6
 
 The CA MUST ensure any remote connection that enables Privileged Access to CA Infrastructure:
 
@@ -364,11 +365,11 @@ The CA MUST ensure any remote connection that enables Privileged Access to CA In
       * is secured in accordance with these Requirements; and
       * mediates the remote connection to the CA Infrastructure.
 
-### 3. Monitoring, Logging, Auditing, and Incident Response
+### 4. Monitoring, Logging, Auditing, and Incident Response
 
-#### 3.1 Monitoring and Logging
+#### 4.1 Monitoring and Logging
 
-##### 3.1.1
+##### 4.1.1
 
 The CA MUST identify and document the monitoring and logging capabilities of CA Infrastructure and Network Boundary Controls.
 
@@ -379,25 +380,25 @@ The CA SHOULD establish, evaluate, and maintain policies and procedures for:
 
 The CA SHOULD review and update such policies and procedures at least annually.
 
-###### 3.1.1.1
+###### 4.1.1.1
 
 The CA MUST ensure the monitoring and logging capabilities of CA Infrastructure and Network Boundary Controls are enabled to the extent necessary to meet:
 
    1. these Requirements; and
    2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates).
 
-###### 3.1.1.2
+###### 4.1.1.2
 
 The CA MUST ensure audit logs produced by the monitoring and logging capabilities of CA Infrastructure and Network Boundary Controls include activities and/or events:
 
    1. necessary to detect possible:
       1. Critical Security Events; and
-      2. modifications to CA Infrastructure not authorized through the change management process outlined in [Section 1.3](#13-change-management); and
+      2. modifications to CA Infrastructure not authorized through the change management process outlined in [Section 2.3](#23-change-management); and
    2. with sufficient detail to meet
       1. these Requirements; and
       2. applicable obligations that depend on such audit logs (such as the requirements in [Section 5.4.1 (3)](https://github.com/cabforum/servercert/blob/main/docs/BR.md#541-types-of-events-recorded) of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates).
 
-##### 3.1.2
+##### 4.1.2
 
 The CA MUST ensure the integrity of logging processes within CA Infrastructure is monitored through:
 
@@ -406,7 +407,7 @@ The CA MUST ensure the integrity of logging processes within CA Infrastructure i
 
 The CA MUST ensure such integrity monitoring is configured and managed in a manner sufficiently effective to identify possible audit log compromise.
 
-###### 3.1.2.1
+###### 4.1.2.1
 
 The CA MUST ensure audit logs are retained and/or archived for the amount of time necessary to meet:
 
@@ -415,9 +416,9 @@ The CA MUST ensure audit logs are retained and/or archived for the amount of tim
 
 The CA SHOULD ensure retained and/or archived audit logs are kept and managed in a manner sufficiently effective to prevent unapproved alteration or access.
 
-#### 3.2 Audit Log Processing and Alerting
+#### 4.2 Audit Log Processing and Alerting
 
-##### 3.2.1
+##### 4.2.1
 
 The CA MUST ensure audit logs are processed:
 
@@ -426,7 +427,7 @@ The CA MUST ensure audit logs are processed:
       1. Critical Security Events; and
       2. unauthorized changes to CA Infrastructure.
 
-##### 3.2.2
+##### 4.2.2
 
 The CA MUST ensure personnel assigned to applicable Trusted Roles are alerted via multiple mechanisms and/or communication channels of identified possible:
 
@@ -434,11 +435,11 @@ The CA MUST ensure personnel assigned to applicable Trusted Roles are alerted vi
    2. Critical Security Events; and
    3. unauthorized changes to CA Infrastructure.
 
-##### 3.2.3
+##### 4.2.3
 
-The CA MUST ensure personnel assigned to applicable Trusted Roles commence an initial response to alerts of [Section 3.2.2](#322) within twenty-four (24) hours of the alert being generated.
+The CA MUST ensure personnel assigned to applicable Trusted Roles commence an initial response to alerts of [Section 4.2.2](#422) within twenty-four (24) hours of the alert being generated.
 
-###### 3.2.3.1
+###### 4.2.3.1
 
 The CA MUST ensure the initial response confirms whether the alert identifies a legitimate
 
@@ -448,7 +449,7 @@ The CA MUST ensure the initial response confirms whether the alert identifies a 
 
 The CA MUST ensure personnel assigned to applicable Trusted Roles create and follow an incident response plan for all legitimate alerts.
 
-###### 3.2.3.2
+###### 4.2.3.2
 
 The CA SHOULD ensure incident response plans minimally include:
 
@@ -456,21 +457,17 @@ The CA SHOULD ensure incident response plans minimally include:
    2. containment of the incident to minimize further impact; and
    3. identification and mitigation or eradication of the incident root cause(s).
 
-### 4. Vulnerability Management
+### 5. Vulnerability Management
 
-The CA MUST implement the policies and procedures in [Section 4](#4-vulnerability-management) for identifying, evaluating, and resolving security vulnerabilities.
+The CA MUST implement the policies and procedures in [Section 5](#5-vulnerability-management) for identifying, evaluating, and resolving security vulnerabilities.
 
-These policies and procedures MUST apply to all Certificate Systems.
+These policies and procedures MUST apply to all Certificate Systems, all Security Support Systems, and all Network Boundary Controls.
 
-These policies and procedures SHOULD apply to Security Support Systems and Network Boundary Controls.
-
-Effective 15-Apr-2026, these policies and procedures MUST apply to Security Support Systems and Network Boundary Controls.
-
-#### 4.1 Intrusion Detection and Prevention
+#### 5.1 Intrusion Detection and Prevention
 
 The CA MUST protect the systems in the inventory of CA Infrastructure against common network and system threats using intrusion detection and prevention controls.
 
-#### 4.2 Vulnerability Management Lifecycle
+#### 5.2 Vulnerability Management Lifecycle
 
 The CA MUST document and follow a vulnerability correction process that includes:
 
@@ -479,11 +476,11 @@ The CA MUST document and follow a vulnerability correction process that includes
    1. response; and
    1. remediation.
 
-##### 4.2.1 Vulnerability Identification
+##### 5.2.1 Vulnerability Identification
 
 The CA's vulnerability identification process MUST include monitoring for relevant security advisories and penetration testing.
 
-###### 4.2.1.1 Penetration Testing
+###### 5.2.1.1 Penetration Testing
 
 As part of the identification component of the CA's vulnerability correction process, the CA MUST define and follow a program for performing penetration tests that ensures:
 
@@ -491,16 +488,16 @@ As part of the identification component of the CA's vulnerability correction pro
       * at least on an annual basis; and
       * after infrastructure or application changes that are organizationally defined as significant; and
    2. penetration tests are performed by a person or entity (or collective group thereof) with the requisite skills, tools, proficiency, code of ethics, and independence; and
-   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 4.2](#42-vulnerability-management-lifecycle).
+   3. vulnerabilities identified during the penetration test are remediated using the vulnerability correction process in [Section 5.2](#52-vulnerability-management-lifecycle).
 
-##### 4.2.2 Vulnerability Remediation
+##### 5.2.2 Vulnerability Remediation
 
 A vulnerability is remediated when the CA has:
 
 * fixed the vulnerability such that the vulnerability is no longer present; or
 * confirmed the impact of the vulnerability and documented why the vulnerability does not impact the CA's security posture.
 
-#### 4.3 Vulnerability Management Timeframe
+#### 5.3 Vulnerability Management Timeframe
 
 The CA MUST establish one or more timeframes for reviewing, responding to, and remediating all identified vulnerabilities.
 
