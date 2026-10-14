@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0.6
 author:
   - CA/Browser Forum
-date: xx June 2026
+date: 14 October 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -59,7 +59,7 @@ The following are outcomes that this document seeks to achieve:
 | 2.0.3 | NS-006 | Fix 1.2.2 encrypted connections scoping | 13-Nov-2024 | 13-Dec-2024 |
 | 2.0.4 | NS-007 | Extend deadline to implement NSRv2 | 02-Feb-2025 | 07-Mar-2025 |
 | 2.0.5 | NS-008 | Updates to CA Infrastructure Scope, Trusted Roles, Systems' Applicability, and various other improvements | 03-Jun-2025 | 03-Jul-2025 |
-| 2.0.6 | NS-010 | Introduce section for CA Infrastructure Inventory and renumber subsequent sections, remove expired effective dates, and update NIST SP 800-63B reference | xx-Jun-2026 | xx-Jul-2026 |
+| 2.0.6 | NS-010 | Introduce section for CA Infrastructure Inventory and renumber subsequent sections, remove expired effective dates, and update NIST SP 800-63B reference | 14-Oct-2026 | 13-Nov-2026 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
