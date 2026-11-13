@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 2.0.6
 author:
   - CA/Browser Forum
-date: 14 October 2026
+date: 13 November 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
